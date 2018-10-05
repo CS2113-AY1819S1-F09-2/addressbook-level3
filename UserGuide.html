@@ -1,277 +1,572 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Restaurant Management System (RMS) - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Restaurant Management System (RMS) - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This product is not meant for end-users and therefore there is no user-friendly installer.
-Please refer to the <a href="DeveloperGuide.html#setting-up">Setting up</a> section to learn how to set up the project.</p>
+<p>By: <code>CS2113-AY1819S1-F09-2</code>      Since: <code>Aug 2018</code>      Licence: <code>MIT</code></p>
+</div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#Features">3. Features</a>
+<ul class="sectlevel2">
+<li><a href="#menu">3.1. Menu</a></li>
+<li><a href="#order">3.2. Order</a></li>
+<li><a href="#members">3.3. Members</a></li>
+<li><a href="#employees">3.4. Employees</a></li>
+<li><a href="#delete-employee">3.5. Delete Employee</a></li>
+<li><a href="#statistics">3.6. Statistics</a></li>
+<li><a href="#view-order-statistics">3.7. View Order Statistics</a></li>
+<li><a href="#view-member-statistics">3.8. View Member Statistics</a></li>
+<li><a href="#saving-the-data">3.9. Saving the data</a></li>
+</ul>
+</li>
+<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#command-summary">5. Command Summary</a>
+<ul class="sectlevel2">
+<li><a href="#menu-2">5.1. Menu</a></li>
+<li><a href="#order-2">5.2. Order</a></li>
+<li><a href="#employees-2">5.3. Employees</a></li>
+<li><a href="#members-2">5.4. Members</a></li>
+<li><a href="#statistics-2">5.5. Statistics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Food Management System is to help provide restaurants
+ with a more efficient way to manage their restaurants.
+  It has various amount of features that can improve
+   productivity of the different staff members in the
+    restaurant.
+    Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="starting-the-program"><a class="link" href="#starting-the-program">Starting the program</a></h2>
+<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>[Coming Soon]</strong></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Find the project pane (usually located at the left side)</p>
-</li>
-<li>
-<p>Open up <code>src/seedu.addressbook</code> folder</p>
-</li>
-<li>
-<p>Right click on <code>Main</code></p>
-</li>
-<li>
-<p>Click <code>Run Main.main()</code></p>
-</li>
-<li>
-<p>The GUI should appear in a few seconds</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui">
-</div>
-</div>
+<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">Viewing help : <code>help</code></a></h2>
+<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Help is also shown if you enter an incorrect command e.g. <code>abcd</code></p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Adds a person to the address book.<br>
-Format: <code>add NAME [p]p/PHONE_NUMBER [p]e/EMAIL [p]a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
+<div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>Words in <code>UPPER_CASE</code> are the parameters, items in <code>SQUARE_BRACKETS</code> are optional,
-items with <code>&#8230;&#8203;</code> after them can have multiple instances. Order of parameters are fixed.</p>
+<p><strong>How It Works</strong></p>
 </div>
 <div class="paragraph">
-<p>Put a <code>p</code> before the phone / email / address prefixes to mark it as <code>private</code>. <code>private</code> details can only
-be seen using the <code>viewall</code> command.</p>
+<p>When the application is first started, users have to choose
+ which state it wants to enter. There are 5 choices to pick from
+ :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Menu</p>
+</li>
+<li>
+<p>Order</p>
+</li>
+<li>
+<p>Customers</p>
+</li>
+<li>
+<p>Employees</p>
+</li>
+<li>
+<p>Statistics</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Persons can have any number of tags (including 0)</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
+<p><strong>Command Format</strong></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>add John Doe p/98765432 e/johnd@gmail.com a/John street, block 123, #01-01</code></p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
-<p><code>add Betsy Crowe pp/1234567 e/betsycrowe@gmail.com pa/Newgate Prison t/criminal t/friend</code></p>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">Listing all persons : <code>list</code></a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="menu"><a class="link" href="#menu">3.1. Menu</a></h3>
+<div class="sect3">
+<h4 id="view-menu"><a class="link" href="#view-menu">3.1.1. View Menu</a></h4>
 <div class="paragraph">
-<p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="finding-all-persons-containing-any-keyword-in-their-name-code-find-code"><a class="link" href="#finding-all-persons-containing-any-keyword-in-their-name-code-find-code">Finding all persons containing any keyword in their name: <code>find</code></a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The search is case sensitive, the order of the keywords does not matter, only the name is searched,
-and persons matching at least one keyword will be returned (i.e. <code>OR</code> search).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
+<p>View all items inside the menu<br>
+Format: view</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>John Doe</code> but not <code>john</code>.</p>
+<p>List the current food items in the menu</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-menu"><a class="link" href="#find-menu">3.1.2. Find Menu</a></h4>
+<div class="paragraph">
+<p>Finds the food item(s) related to the keywords typed in by the user.<br>
+Format: find KEYWORD [MORE KEYWORDS]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of menu items with names related to the keyword(s) will be displayed.</p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns Any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code>.</p>
+<p>The command is case insensitive.</p>
+</li>
+<li>
+<p>Order of keywords do not matter.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+find Burger COKE fries<br>
+Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-menu"><a class="link" href="#update-menu">3.1.3. Update Menu</a></h4>
+<div class="paragraph">
+<p>Shows options that you can use to update the menu.<br>
+Format: update</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update Menu will show user what he/ she can do to update menu.</p>
+</li>
+<li>
+<p>Menu is updated by adding, editing or deleting food items from menu list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-item"><a class="link" href="#add-item">3.1.4. Add Item</a></h4>
+<div class="paragraph">
+<p>Add a new item to the menu and sorts the menu.<br>
+Format: add NAME p/PRICE [t/TAG]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds the new food item into the menu list</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+add Cheese Fries p/3.50 t/New item<br>
+System adds Cheese Fries to the existing menu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-item"><a class="link" href="#edit-item">3.1.5. Edit Item</a></h4>
+<div class="paragraph">
+<p>Edit an item on the menu<br>
+Format: edit INDEX [n/NAME] [p/PRICE] [t/TAG]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the name, price and tag of food item in that particular index (User able to edit either one or all three attributes of the particular food item)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+edit 3 Cheese Fries with bacon p/5.00 t/Limited Offer<br>
+System updates Cheese Fries, which is in index 3, to Cheese Fries with bacon and changes the price from $3.50 to $5.00</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-item"><a class="link" href="#delete-item">3.1.6. Delete Item</a></h4>
+<div class="paragraph">
+<p>Delete an item on the menu<br>
+Format: delete INDEX</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the food item in that particular index</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+view menu<br>
+delete 1<br>
+System deletes food item in index 1 from the menu.<br>
+find Cheese Fries<br>
+Delete 3<br>
+System deletes Cheese Fries in index 3 from the menu.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="order"><a class="link" href="#order">3.2. Order</a></h3>
+<div class="sect3">
+<h4 id="list-orders"><a class="link" href="#list-orders">3.2.1. List Orders</a></h4>
+<div class="paragraph">
+<p>Shows a list of all the current orders.<br></p>
+</div>
+<div class="paragraph">
+<p>Each order include details of: customer, ordered time, total price and the list of dish items and quantities ordered<br></p>
+</div>
+<div class="paragraph">
+<p>Only the non-private data of customer will be showed.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: listorder</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-order"><a class="link" href="#view-order">3.2.2. View Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Shows the details of a specified order.<br>
+Format: view INDEX</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the order at a specific index</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-order"><a class="link" href="#add-order">3.2.3. Add Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Adds a new order to the list of current orders and display the list.<br>
+Format: add ORDERFORMAT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-order"><a class="link" href="#update-order">3.2.4. Update Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Shows options that you can use to update orders.<br>
+Format: update</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Shows the list of commands the user can use (add, edit, delete)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-order"><a class="link" href="#edit-order">3.2.5. Edit Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Edit details of an order.<br>
+Format: edit INDEX</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the order at a specific index</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-order"><a class="link" href="#delete-order">3.2.6. Delete Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Delete an order.<br>
+Format: delete INDEX</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the order at a specific index</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-order"><a class="link" href="#find-order">3.2.7. Find Order</a></h4>
+<div class="paragraph">
+<p>(To be implemented)<br>
+Find an order by certain parameters.<br>
+Format: find KEYWORD [MORE_KEYWORDS]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case-insensitive</p>
+</li>
+<li>
+<p>The order of keywords do not matter</p>
+</li>
+<li>
+<p>Only the name of the order will be searched</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">Deleting a person : <code>delete</code></a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="members"><a class="link" href="#members">3.3. Members</a></h3>
+<div class="sect3">
+<h4 id="add-member"><a class="link" href="#add-member">3.3.1. Add Member</a></h4>
 <div class="paragraph">
-<p>Deletes the specified person from the address book. Irreversible.<br>
-Format: <code>delete INDEX</code></p>
+<p>Add a new member to the RMS<br>
+Format: add NAME p/PHONE_NUMBER e/EMAIL_ADDRESS d/DATE_JOINED</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+</div>
+<div class="sect3">
+<h4 id="edit-member"><a class="link" href="#edit-member">3.3.2. Edit Member</a></h4>
 <div class="paragraph">
-<p>Deletes the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
+<p>Edit membership details of a member in the RMS<br>
+Format: edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</p>
+</div>
+<div class="sect4">
+<h5 id="delete-member"><a class="link" href="#delete-member">Delete Member</a></h5>
+<div class="paragraph">
+<p>Delete membership details of a member in the RMS<br>
+Format: delete NAME</p>
 </div>
 </div>
+</div>
+<div class="sect3">
+<h4 id="find-member"><a class="link" href="#find-member">3.3.3. Find Member</a></h4>
+<div class="paragraph">
+<p>Find membership details of a member in the RMS<br>
+Format: find NAME</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="employees"><a class="link" href="#employees">3.4. Employees</a></h3>
+<div class="sect3">
+<h4 id="view-employees"><a class="link" href="#view-employees">3.4.1. View Employees</a></h4>
+<div class="paragraph">
+<p>Show a list of all the employees on the RMS.<br>
+Format: view</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-employee"><a class="link" href="#add-employee">3.4.2. Add Employee</a></h4>
+<div class="paragraph">
+<p>Adds a new employee to the RMS.<br>
+Format: add n/NAME p/PHONE_NUMBER pos/POSITION</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Examples:<br>
+add n/Joe Bob p/91234567 pos/Chef</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-employee"><a class="link" href="#edit-employee">3.4.3. Edit Employee</a></h4>
+<div class="paragraph">
+<p>Edit details of an employee.<br>
+Format: edit NAME [p/PHONE_NUMBER] [pos/POSITION]</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd person in the address book.</p>
+<p>Edits the person with the given NAME.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>delete 1</code><br>
-Deletes the 1st person in the results of the <code>find</code> command.</p>
+<p>Parameters in square brackets are optional.</p>
+</li>
+<li>
+<p>At least one of the optional parameters must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="view-non-private-details-of-a-person-code-view-code"><a class="link" href="#view-non-private-details-of-a-person-code-view-code">View non-private details of a person : <code>view</code></a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Displays the non-private details of the specified person.<br>
-Format: <code>view INDEX</code></p>
+<p>Examples:<br>
+edit Joe Bob pos/Cashier<br>
+Edits the position of Joe Bob to Cashier</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-employee"><a class="link" href="#delete-employee">3.5. Delete Employee</a></h3>
 <div class="paragraph">
-<p>Views the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
-</div>
-</div>
+<p>Delete and employee.<br>
+Format: delete NAME</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Examples:<br>
+delete Joe Bob<br>
+Deletes Joe Bob.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>view 2</code><br>
-Views the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>view 1</code><br>
-Views the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="view-all-details-of-a-person-code-viewall-code"><a class="link" href="#view-all-details-of-a-person-code-viewall-code">View all details of a person : <code>viewall</code></a></h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="calculate-wages"><a class="link" href="#calculate-wages">3.5.1. Calculate Wages</a></h4>
 <div class="paragraph">
-<p>Displays all details (including private details) of the specified person.<br>
-Format: <code>viewall INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Views all details of the person at the specified <code>INDEX</code>.
-The index refers to the index number shown in the most recent listing.</p>
-</div>
-</div>
+<p>Calculates the wage of an employee.<br>
+Format calcwage NAME</p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Examples:<br>
+calcwage Joe Bob</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>viewall 2</code><br>
-Views all details of the 2nd person in the address book.</p>
-</li>
-<li>
-<p><code>find Betsy</code><br>
-<code>viewall 1</code><br>
-Views all details of the 1st person in the results of the <code>find</code> command.</p>
-</li>
-</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics"><a class="link" href="#statistics">3.6. Statistics</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="view-order-statistics"><a class="link" href="#view-order-statistics">3.7. View Order Statistics</a></h3>
+<div class="paragraph">
+<p>Display the order statistics overview<br>
+Format: vieworderstats</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-member-statistics"><a class="link" href="#view-member-statistics">3.8. View Member Statistics</a></h3>
+<div class="paragraph">
+<p>Display the member statistics overview<br>
+Format: viewmemberstats</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
+<div class="paragraph">
+<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">Clearing all entries : <code>clear</code></a></h2>
+<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Restaurant Management System folder.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">Exiting the program : <code>exit</code></a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="menu-2"><a class="link" href="#menu-2">5.1. Menu</a></h3>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="saving-the-data"><a class="link" href="#saving-the-data">Saving the data</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.</p>
+<p><strong>View Menu</strong> : <code>view</code></p>
 </div>
 <div class="paragraph">
-<p>There is no need to save manually. Address book data are saved in a file called <code>addressbook.txt</code> in the project root folder.</p>
+<p><strong>Find Menu</strong> : <code>find KEYWORD [MORE KEYWORDS]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Update Menu</strong> : <code>update</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Add Item</strong> : <code>add NAME p/PRICE [t/TAG]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Edit Item</strong> : <code>edit INDEX [n/NAME] [p/PRICE] [t/TAG]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Delete Item</strong> : <code>delete INDEX</code></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-07-05 14:55:23 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="order-2"><a class="link" href="#order-2">5.2. Order</a></h3>
+<div class="paragraph">
+<p><strong>View All Order</strong> : <code>viewall</code></p>
+</div>
+<div class="paragraph">
+<p><strong>View Order</strong> : <code>view INDEX</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Add Order</strong> : <code>add ORDERNAME</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Update Order</strong> : <code>update</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Edit Order</strong> : <code>edit INDEX</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Delete Order</strong> : <code>delete INDEX</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Find Order</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="employees-2"><a class="link" href="#employees-2">5.3. Employees</a></h3>
+<div class="paragraph">
+<p><strong>View Employees</strong> : <code>add n/NAME p/PHONE_NUMBER pos/POSITION</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Add Employee</strong> : <code>add n/NAME p/PHONE_NUMBER pos/POSITION</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Edit Employee</strong> : <code>edit NAME [p/PHONE_NUMBER] [pos/POSITION]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Delete Employee</strong> : <code>delete NAME</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Calculate Wages</strong> : <code>calcwage NAME</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="members-2"><a class="link" href="#members-2">5.4. Members</a></h3>
+<div class="paragraph">
+<p><strong>Add Member</strong> : <code>add NAME p/PHONE_NUMBER e/EMAIL_ADDRESS d/DATE_JOINED</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Edit Member</strong> : <code>edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Delete Member</strong> : <code>delete NAME</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Find Member</strong> : <code>find NAME</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics-2"><a class="link" href="#statistics-2">5.5. Statistics</a></h3>
+<div class="paragraph">
+<p><strong>View Order Statistics</strong> : <code>vieworderstats</code></p>
+</div>
+<div class="paragraph">
+<p><strong>View Member Statistics</strong> : <code>viewmemberstats</code></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-05 03:15:20 UTC</div></div></div></body></html>
