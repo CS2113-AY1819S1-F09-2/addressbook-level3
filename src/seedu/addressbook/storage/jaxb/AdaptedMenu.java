@@ -49,7 +49,7 @@ public class AdaptedMenu {
         name = source.getName().fullName;
 
         price = new AdaptedMenuItemDetail();
-        price.isPrivate = source.getPrice().isPrivate();
+        //price.isPrivate = source.getPrice().isPrivate();
         price.value = source.getPrice().value;
 
         tagged = new ArrayList<>();
@@ -87,8 +87,8 @@ public class AdaptedMenu {
         for (AdaptedTag tag : tagged) {
             tags.add(tag.toModelType());
         }
-        final Name name = new Name(this.name);
-        final Price price = new Price(this.price.value, this.price.isPrivate);
+        final MenuName name = new MenuName(this.name);
+        final Price price = new Price(this.price.value/*, this.price.isPrivate*/);
         return new Menu(name, price, tags);
     }
 }

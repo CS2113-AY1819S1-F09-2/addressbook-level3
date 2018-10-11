@@ -5,17 +5,17 @@ import seedu.addressbook.data.tag.Tag;
 import java.util.Set;
 
 /**
- * A read-only immutable interface for a Person in the addressbook.
+ * A read-only immutable interface for a Menu Item in the RMS.
  * Implementations should guarantee: details are present and not null, field values are validated.
  */
 public interface ReadOnlyMenus {
 
-    Name getName();
+    MenuName getName();
     Price getPrice();
 
     /**
      * The returned {@code Set} is a deep copy of the internal {@code Set},
-     * changes on the returned list will not affect the person's internal tags.
+     * changes on the returned list will not affect the menu item's internal tags.
      */
     Set<Tag> getTags();
 
@@ -30,16 +30,12 @@ public interface ReadOnlyMenus {
     }
 
     /**
-     * Formats the person as text, showing all contact details.
+     * Formats the food item as text, showing all relevant details.
      */
     default String getAsTextShowAll() {
         final StringBuilder builder = new StringBuilder();
-        final String detailIsPrivate = "(private) ";
         builder.append(getName())
                 .append(" Price: ");
-        if (getPrice().isPrivate()) {
-            builder.append(detailIsPrivate);
-        }
         builder.append(getPrice())
                 .append(" Tags: ");
         for (Tag tag : getTags()) {
@@ -49,14 +45,14 @@ public interface ReadOnlyMenus {
     }
 
     /**
-     * Formats a person as text, showing only non-private contact details.
+     * Formats a menu item as text, showing only non-private contact details.
      */
     default String getAsTextHidePrivate() {
         final StringBuilder builder = new StringBuilder();
-        builder.append(getName());
-        if (!getPrice().isPrivate()) {
+        builder.append(getName()).append(" Price ").append(getPrice());
+        /*if (!getPrice().isPrivate()) {
             builder.append(" Price: ").append(getPrice());
-        }
+        }*/
         builder.append(" Tags: ");
         for (Tag tag : getTags()) {
             builder.append(tag);

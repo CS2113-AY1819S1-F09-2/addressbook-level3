@@ -26,6 +26,23 @@
         <name>Pizza</name>
         <price isPrivate="false">10</price>
     </menus>
+    <menus>
+        <name>fries</name>
+        <price isPrivate="false">500</price>
+    </menus>
+    <menus>
+        <name>cheesefries</name>
+        <price isPrivate="false">55</price>
+        <tagged>bestseller</tagged>
+    </menus>
+    <menus>
+        <name>cheese</name>
+        <price isPrivate="false">5454</price>
+    </menus>
+    <menus>
+        <name>cheesecheeseburger</name>
+        <price isPrivate="false">5</price>
+    </menus>
     <members>
         <name>Kang Ming</name>
     </members>

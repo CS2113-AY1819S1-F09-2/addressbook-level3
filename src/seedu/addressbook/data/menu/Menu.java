@@ -9,19 +9,19 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Represents a Person in the address book.
+ * Represents a Menu in the RMS.
  * Guarantees: details are present and not null, field values are validated.
  */
 public class Menu implements ReadOnlyMenus {
 
-    private Name name;
+    private MenuName name;
     private Price price;
 
     private final Set<Tag> tags = new HashSet<>();
     /**
      * Assumption: Every field must be present and not null.
      */
-    public Menu(Name name, Price price, Set<Tag> tags) {
+    public Menu(MenuName name, Price price, Set<Tag> tags) {
         this.name = name;
         this.price = price;
         this.tags.addAll(tags);
@@ -35,7 +35,7 @@ public class Menu implements ReadOnlyMenus {
     }
 
     @Override
-    public Name getName() {
+    public MenuName getName() {
         return name;
     }
 
@@ -51,7 +51,7 @@ public class Menu implements ReadOnlyMenus {
     }
 
     /**
-     * Replaces this person's tags with the tags in {@code replacement}.
+     * Replaces this menu item's tags with the tags in {@code replacement}.
      */
     public void setTags(Set<Tag> replacement) {
         tags.clear();
@@ -77,3 +77,4 @@ public class Menu implements ReadOnlyMenus {
     }
 
 }
+//random comment

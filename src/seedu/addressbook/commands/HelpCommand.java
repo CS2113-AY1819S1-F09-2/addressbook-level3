@@ -12,7 +12,7 @@ public class HelpCommand extends Command {
             + "Example: " + COMMAND_WORD;
 
     public static final String MESSAGE_ALL_USAGES = AddCommand.MESSAGE_USAGE
-            //+ "\n" + AddMenu.MESSAGE_DUPLICATE_MENUITEM
+            + "\n" + MenuAddCommand.MESSAGE_USAGE
             + "\n" + DeleteCommand.MESSAGE_USAGE
             + "\n" + ClearCommand.MESSAGE_USAGE
             + "\n" + FindCommand.MESSAGE_USAGE

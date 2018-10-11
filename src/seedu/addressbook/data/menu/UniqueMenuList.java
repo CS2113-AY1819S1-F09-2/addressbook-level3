@@ -23,7 +23,7 @@ public class UniqueMenuList implements Iterable<Menu> {
     }
 
     /**
-     * Signals that an operation targeting a specified person in the list would fail because
+     * Signals that an operation targeting a specified menu item in the list would fail because
      * there is no such matching person in the list.
      */
     public static class MenuNotFoundException extends Exception {}
@@ -31,12 +31,12 @@ public class UniqueMenuList implements Iterable<Menu> {
     private final List<Menu> internalList = new ArrayList<>();
 
     /**
-     * Constructs empty person list.
+     * Constructs empty menu list.
      */
     public UniqueMenuList() {}
 
     /**
-     * Constructs a person list with the given persons.
+     * Constructs a menu list with the given menus.
      */
     public UniqueMenuList(Menu... menus) throws DuplicateMenuException {
         final List<Menu> initialTags = Arrays.asList(menus);
@@ -76,16 +76,16 @@ public class UniqueMenuList implements Iterable<Menu> {
 
 
     /**
-     * Checks if the list contains an equivalent person as the given argument.
+     * Checks if the list contains an equivalent menu item as the given argument.
      */
     public boolean contains(ReadOnlyMenus toCheck) {
         return internalList.contains(toCheck);
     }
 
     /**
-     * Adds a person to the list.
+     * Adds a menu item to the list.
      *
-     * @throws DuplicateMenuException if the person to add is a duplicate of an existing person in the list.
+     * @throws DuplicateMenuException if the menu item to add is a duplicate of an existing menu item in the list.
      */
     public void add(Menu toAdd) throws DuplicateMenuException {
         if (contains(toAdd)) {
@@ -95,9 +95,9 @@ public class UniqueMenuList implements Iterable<Menu> {
     }
 
     /**
-     * Removes the equivalent person from the list.
+     * Removes the equivalent menu item from the list.
      *
-     * @throws MenuNotFoundException if no such person could be found in the list.
+     * @throws MenuNotFoundException if no such menu item could be found in the list.
      */
     public void remove(ReadOnlyMenus toRemove) throws MenuNotFoundException {
         final boolean menuFoundAndDeleted = internalList.remove(toRemove);

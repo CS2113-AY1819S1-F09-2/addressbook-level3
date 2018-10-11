@@ -6,7 +6,7 @@ import seedu.addressbook.data.menu.ReadOnlyMenus;
 
 
 /**
- * Lists all persons in the address book to the user.
+ * Lists all food items in the address book to the user.
  */
 public class MenuListCommand extends Command {
 

@@ -9,7 +9,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
  * Represents a Person's name in the address book.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
  */
-public class Name {
+public class MenuName {
 
     public static final String EXAMPLE = "John Doe";
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphanumeric characters";
@@ -22,7 +22,7 @@ public class Name {
      *
      * @throws IllegalValueException if given name string is invalid.
      */
-    public Name(String name) throws IllegalValueException {
+    public MenuName(String name) throws IllegalValueException {
         name = name.trim();
         if (!isValidName(name)) {
             throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
@@ -52,8 +52,8 @@ public class Name {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Name // instanceof handles nulls
-                && this.fullName.equals(((Name) other).fullName)); // state check
+                || (other instanceof MenuName // instanceof handles nulls
+                && this.fullName.equals(((MenuName) other).fullName)); // state check
     }
 
     @Override

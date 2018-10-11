@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RMS>
+<AddressBook>
     <persons>
         <invalid>data</invalid>
     </persons>
-</RMS>
+</AddressBook>

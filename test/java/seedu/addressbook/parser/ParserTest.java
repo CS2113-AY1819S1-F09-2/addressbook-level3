@@ -6,6 +6,7 @@ import seedu.addressbook.commands.*;
 import seedu.addressbook.data.exception.IllegalValueException;
 import seedu.addressbook.data.tag.Tag;
 import seedu.addressbook.data.person.*;
+import seedu.addressbook.data.menu.*;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -56,6 +57,12 @@ public class ParserTest {
     public void listCommand_parsedCorrectly() {
         final String input = "list";
         parseAndAssertCommandType(input, ListCommand.class);
+    }
+
+    @Test
+    public void MenulistCommand_parsedCorrectly() {
+        final String input = "listmenu";
+        parseAndAssertCommandType(input, MenuListCommand.class);
     }
 
     @Test
@@ -269,6 +276,99 @@ public class ParserTest {
             addCommand += " t/" + tag.tagName;
         }
         return addCommand;
+    }
+
+    /**
+     * Test add menu item command
+     */
+
+    //Testing for invalid argument cases in add menu command (invalid if the price prefix is not present)
+
+   /*
+    @Test
+    public void addmenuCommand_invalidArgs() {
+        final String[] inputs = {
+                "addmenu",
+                "addmenu ",
+                "add wrong args format",
+                // no price prefix
+                String.format("addmenu $s $s", Name.EXAMPLE, Price.EXAMPLE)
+        };
+        final String resultMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, MenuAddCommand.MESSAGE_USAGE);
+        parseAndAssertIncorrectWithMessage(resultMessage, inputs);
+    }*/
+
+    //Testing for invalid Food Item Data Argument
+
+    @Test
+    public void addmenuCommand_invalidFoodItemDataInArgs() {
+        final String invalidName = "[]\\[;]";
+        final String validName = MenuName.EXAMPLE;
+        final String invalidPriceArg = "p/not__numbers";
+        final String validPriceArg = "p/" + Price.EXAMPLE;
+        final String invalidTagArg = "t/invalid_-[.tag";
+        final String addmenuCommandFormatString = "addmenu $s $s";
+
+
+        // test each incorrect menu item data field argument individually
+        final String[] inputs = {
+                // invalid item name
+                String.format(addmenuCommandFormatString, invalidName, validPriceArg),
+                // invalid price
+                String.format(addmenuCommandFormatString, validName, invalidPriceArg),
+                // invalid tag
+                String.format(addmenuCommandFormatString, validName, validPriceArg) + " " + invalidTagArg
+        };
+        for (String input : inputs) {
+            parseAndAssertCommandType(input, IncorrectCommand.class);
+        }
+    }
+
+    //Testing for valid Food Item Data parsed correctly
+
+    /*
+    @Test
+    public void addmenuCommand_validFoodItemData_parsedCorrectly() {
+        final Menu testMenu = generateTestMenu();
+        final String input = convertMenuToAddCommandString(testMenu);
+        final MenuAddCommand result = parseAndAssertCommandType(input, MenuAddCommand.class);
+        assertEquals(result.getMenu(), testMenu);
+    }
+
+
+    @Test
+    public void addmenuCommand_duplicateTags_merged() throws IllegalValueException {
+        final Menu testMenu = generateTestMenu();
+        String input = convertMenuToAddCommandString(testMenu);
+        for (Tag tag : testMenu.getTags()) {
+            // create duplicates by doubling each tag
+            input += " t/" + tag.tagName;
+        }
+
+        final MenuAddCommand result = parseAndAssertCommandType(input, MenuAddCommand.class);
+        assertEquals(result.getMenu(), testMenu);
+    }*/
+
+    private static Menu generateTestMenu() {
+        try {
+            return new Menu(
+                    new MenuName(MenuName.EXAMPLE),
+                    new Price(Price.EXAMPLE),
+                    new HashSet<>(Arrays.asList(new Tag("tag1"), new Tag("tag2"), new Tag("tag3")))
+            );
+        } catch (IllegalValueException ive) {
+            throw new RuntimeException("test menu data should be valid by definition");
+        }
+    }
+
+    private static String convertMenuToAddCommandString(ReadOnlyMenus menu) {
+        String addmenuCommand = "addmenu "
+                + menu.getName().fullName
+                + " p/" + menu.getPrice().value;
+        for (Tag tag : menu.getTags()) {
+            addmenuCommand += " t/" + tag.tagName;
+        }
+        return addmenuCommand;
     }
 
     /**
