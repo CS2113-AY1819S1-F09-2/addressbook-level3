@@ -11,6 +11,6 @@ import java.util.List;
 public class MemberCommandResult extends CommandResult {
 
     public MemberCommandResult(String feedbackToUser, List<? extends ReadOnlyMember> relevantMembers) {
-        super(feedbackToUser, null, null, null, relevantMembers);
+        super(feedbackToUser, null, null, null, relevantMembers, null);
     }
 }

@@ -5,6 +5,7 @@ import seedu.addressbook.data.Rms;
 import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.order.ReadOnlyOrder;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public abstract class Command {
     protected List<? extends ReadOnlyMenus> relevantMenus;
     protected List<? extends ReadOnlyMember> relevantMembers;
     protected List<? extends ReadOnlyOrder> relevantOrders;
+    protected List<? extends ReadOnlyEmployee> relevantEmployees;
 
     private int targetIndex = -1;
 
@@ -45,6 +47,16 @@ public abstract class Command {
      */
     public static String getMessageForPersonListShownSummary(List<? extends ReadOnlyPerson> personsDisplayed) {
         return String.format(Messages.MESSAGE_PERSONS_LISTED_OVERVIEW, personsDisplayed.size());
+    }
+
+    /**
+     * Constructs a feedback message to summarise an operation that displayed a listing of employees.
+     *
+     * @param employeesDisplayed used to generate summary
+     * @return summary message for employees displayed
+     */
+    public static String getMessageForEmployeeListShownSummary(List<? extends ReadOnlyEmployee> employeesDisplayed) {
+        return String.format(Messages.MESSAGE_EMPLOYEES_LISTED_OVERVIEW, employeesDisplayed.size());
     }
 
     /**
@@ -92,12 +104,14 @@ public abstract class Command {
                         List<? extends ReadOnlyPerson> relevantPersons,
                         List<? extends ReadOnlyMenus> relevantMenus,
                         List<? extends ReadOnlyOrder> relevantOrders,
-                        List<? extends ReadOnlyMember> relevantMembers) {
+                        List<? extends ReadOnlyMember> relevantMembers,
+                        List<? extends ReadOnlyEmployee> relevantEmployees) {
         this.rms = rms;
         this.relevantPersons = relevantPersons;
         this.relevantMenus = relevantMenus;
         this.relevantOrders = relevantOrders;
         this.relevantMembers = relevantMembers;
+        this.relevantEmployees = relevantEmployees;
     }
 
     /**
@@ -134,6 +148,15 @@ public abstract class Command {
      */
     protected ReadOnlyOrder getTargetOrder() throws IndexOutOfBoundsException {
         return relevantOrders.get(getTargetIndex() - DISPLAYED_INDEX_OFFSET);
+    }
+
+    /**
+     * Extracts the the target order in the last shown employee list from the given arguments.
+     *
+     * @throws IndexOutOfBoundsException if the target index is out of bounds of the last viewed listing
+     */
+    protected ReadOnlyEmployee getTargetEmployee() throws IndexOutOfBoundsException {
+        return relevantEmployees.get(getTargetIndex() - DISPLAYED_INDEX_OFFSET);
     }
 
     public int getTargetIndex() {

@@ -1,5 +1,6 @@
 package seedu.addressbook.commands;
 
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.order.ReadOnlyOrder;
@@ -19,6 +20,9 @@ public class CommandResult {
     /** The list of persons that was produced by the command */
     private final List<? extends ReadOnlyPerson> relevantPersons;
 
+    /** The list of persons that was produced by the command */
+    private final List<? extends ReadOnlyEmployee> relevantEmployees;
+
     /** The menu list produced by the menu command*/
     private final List<? extends ReadOnlyMenus> relevantMenus;
 
@@ -35,6 +39,7 @@ public class CommandResult {
         relevantMenus = null;
         relevantOrders = null;
         relevantMembers = null;
+        relevantEmployees = null;
     }
 
     /** Old AB3 command result constructor for result which return person list*/
@@ -44,6 +49,7 @@ public class CommandResult {
         this.relevantMenus = null;
         this.relevantOrders = null;
         this.relevantMembers = null;
+        this.relevantEmployees = null;
     }
 
     /** Command result constructor used by child classes for Rms commands*/
@@ -51,12 +57,14 @@ public class CommandResult {
                          List<? extends ReadOnlyPerson> relevantPersons,
                          List<? extends ReadOnlyMenus> relevantMenus,
                          List<? extends ReadOnlyOrder> relevantOrders,
-                         List<? extends ReadOnlyMember> relevantMembers) {
+                         List<? extends ReadOnlyMember> relevantMembers,
+                         List<? extends ReadOnlyEmployee> relevantEmployees) {
         this.feedbackToUser = feedbackToUser;
         this.relevantPersons = relevantPersons;
         this.relevantMenus = relevantMenus;
         this.relevantOrders = relevantOrders;
         this.relevantMembers = relevantMembers;
+        this.relevantEmployees = relevantEmployees;
     }
 
     /**
@@ -85,6 +93,12 @@ public class CommandResult {
      */
     public Optional<List<? extends ReadOnlyMember>> getRelevantMember() {
         return Optional.ofNullable(relevantMembers);
+    }
+
+    /**
+     * Returns list of employees relevant to the command result, if any.
+     */
+    public Optional<List<? extends ReadOnlyEmployee>> getRelevantEmployee() { return Optional.ofNullable(relevantEmployees);
     }
 
 }

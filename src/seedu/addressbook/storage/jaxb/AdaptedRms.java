@@ -10,8 +10,8 @@ import seedu.addressbook.data.member.Member;
 import seedu.addressbook.data.member.UniqueMemberList;
 import seedu.addressbook.data.person.Person;
 import seedu.addressbook.data.person.UniquePersonList;
-import seedu.addressbook.data.person.Employee;
-import seedu.addressbook.data.person.UniqueEmployeeList;
+import seedu.addressbook.data.employee.Employee;
+import seedu.addressbook.data.employee.UniqueEmployeeList;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

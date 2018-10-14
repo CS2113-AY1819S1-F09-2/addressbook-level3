@@ -26,6 +26,6 @@ public class MenuCommandResult extends CommandResult {
      * Returns list of menu items relevant to the command command result_menu, if any.
      */
     public MenuCommandResult(String feedbackToUser, List<? extends ReadOnlyMenus> relevantMenus){
-        super(feedbackToUser, null, relevantMenus, null, null);
+        super(feedbackToUser, null, relevantMenus, null, null, null);
     }
 }

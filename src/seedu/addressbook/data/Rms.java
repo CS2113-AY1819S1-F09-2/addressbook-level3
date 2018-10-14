@@ -16,9 +16,11 @@ import seedu.addressbook.data.order.UniqueOrderList;
 import seedu.addressbook.data.order.UniqueOrderList.OrderNotFoundException;
 import seedu.addressbook.data.person.Person;
 import seedu.addressbook.data.person.ReadOnlyPerson;
-import seedu.addressbook.data.person.Employee;
-import seedu.addressbook.data.person.UniqueEmployeeList;
-import seedu.addressbook.data.person.UniqueEmployeeList.DuplicateEmployeeException;
+import seedu.addressbook.data.employee.Employee;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
+import seedu.addressbook.data.employee.UniqueEmployeeList;
+import seedu.addressbook.data.employee.UniqueEmployeeList.DuplicateEmployeeException;
+import seedu.addressbook.data.employee.UniqueEmployeeList.EmployeeNotFoundException;
 import seedu.addressbook.data.person.UniquePersonList;
 import seedu.addressbook.data.person.UniquePersonList.DuplicatePersonException;
 import seedu.addressbook.data.person.UniquePersonList.PersonNotFoundException;
@@ -79,7 +81,7 @@ public class Rms {
     /**
      * Adds a person to the address book.
      *
-     * @throws DuplicatePersonException if an equivalent person already exists.
+     * @throws DuplicateEmployeeException if an equivalent person already exists.
      */
     public void addEmployee(Employee toAdd) throws DuplicateEmployeeException { allEmployees.add(toAdd); }
 
@@ -135,6 +137,14 @@ public class Rms {
     }
 
     /**
+     * Checks if an equivalent employee exists in the address book.
+     */
+    public boolean containsEmployee(ReadOnlyEmployee key) {
+        return allEmployees.contains(key);
+    }
+
+
+    /**
      * Removes the equivalent person from the address book.
      *
      * @throws PersonNotFoundException if no such Person could be found.
@@ -171,6 +181,15 @@ public class Rms {
     }
 
     /**
+     * Removes the equivalent employee from the address book.
+     *
+     * @throws EmployeeNotFoundException if no such Employee could be found.
+     */
+    public void removeEmployee(ReadOnlyEmployee toRemove) throws EmployeeNotFoundException {
+        allEmployees.remove(toRemove);
+    }
+
+    /**
      * Clears all persons from the address book.
      */
     public void clear() {
@@ -196,6 +215,13 @@ public class Rms {
      */
     public void clearMembers() {
         allMembers.clear();
+    }
+
+    /**
+     * Clears all employees from the Rms.
+     */
+    public void clearEmployee() {
+        allEmployees.clear();
     }
 
     /**

@@ -4,6 +4,7 @@ import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.order.ReadOnlyOrder;
 import seedu.addressbook.data.person.ReadOnlyPerson;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,15 @@ public class Formatter {
         final List<String> formattedOrders = new ArrayList<>();
         for (ReadOnlyMember member : members) {
             formattedOrders.add(member.getAsTextHidePrivate());
+        }
+        return format(asIndexedList(formattedOrders));
+    }
+
+    /** Formats the given list of employees for displaying to the user. */
+    public String formatEmployeeResult(List<? extends ReadOnlyEmployee> employees) {
+        final List<String> formattedOrders = new ArrayList<>();
+        for (ReadOnlyEmployee employee : employees) {
+            formattedOrders.add(employee.getAsTextShowDetails());
         }
         return format(asIndexedList(formattedOrders));
     }

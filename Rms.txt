@@ -64,6 +64,18 @@
         <email>johnd@gmail.com</email>
         <address>311, Clementi Ave 2, #02-25</address>
     </employees>
+    <employees>
+        <name>Trevor Doe</name>
+        <phone>98765432</phone>
+        <email>johnd@gmail.com</email>
+        <address>311, Clementi Ave 2, #02-25</address>
+    </employees>
+    <employees>
+        <name>Peter Lee</name>
+        <phone>91234567</phone>
+        <email>PeterLee89@rms.com</email>
+        <address>Clementi Ave 2, Blk 543 #13-12</address>
+    </employees>
     <orders>
         <customer>
             <name>Pham</name>

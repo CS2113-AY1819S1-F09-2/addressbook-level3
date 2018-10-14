@@ -43,7 +43,11 @@ public class Parser {
                     + " (?<isPointsPrivate>p?)pt/(?<points>[^/]+)"
                     + "(?<tagArguments>(?: t/[^/]+)*)"); // variable number of tags
 
-
+    public static final Pattern EMPLOYEE_DATA_ARGS_FORMAT = // '/' forward slashes are reserved for delimiter prefixes
+            Pattern.compile("(?<name>[^/]+)"
+                    + "p/(?<phone>[^/]+)"
+                    + "e/(?<email>[^/]+)"
+                    + "a/(?<address>[^/]+)");
     /**
      * Signals that the user input could not be parsed.
      */
@@ -190,7 +194,7 @@ public class Parser {
      * @return the prepared command
      */
     private Command prepareEmpAdd(String args){
-        final Matcher matcher = PERSON_DATA_ARGS_FORMAT.matcher(args.trim());
+        final Matcher matcher = EMPLOYEE_DATA_ARGS_FORMAT.matcher(args.trim());
         // Validate arg string format
         if (!matcher.matches()) {
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EmployeeAddCommand.MESSAGE_USAGE));
@@ -200,15 +204,10 @@ public class Parser {
                     matcher.group("name"),
 
                     matcher.group("phone"),
-                    isPrivatePrefixPresent(matcher.group("isPhonePrivate")),
 
                     matcher.group("email"),
-                    isPrivatePrefixPresent(matcher.group("isEmailPrivate")),
 
-                    matcher.group("address"),
-                    isPrivatePrefixPresent(matcher.group("isAddressPrivate")),
-
-                    getTagsFromArgs(matcher.group("tagArguments"))
+                    matcher.group("address")
             );
         } catch (IllegalValueException ive) {
             return new IncorrectCommand(ive.getMessage());

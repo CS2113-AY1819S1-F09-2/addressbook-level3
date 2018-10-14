@@ -5,6 +5,7 @@ import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.order.ReadOnlyOrder;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 import seedu.addressbook.data.person.ReadOnlyPerson;
 import seedu.addressbook.data.Rms;
 import seedu.addressbook.parser.Parser;
@@ -25,7 +26,6 @@ public class Logic {
     /** The list of person shown to the user most recently.  */
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
 
-
     /** The list of menu shown to the user most recently.  */
     private List<? extends ReadOnlyMenus> lastShownMenuList = Collections.emptyList();
 
@@ -34,6 +34,9 @@ public class Logic {
 
     /** The list of order shown to the user most recently.  */
     private List<? extends ReadOnlyOrder> lastShownOrderList = Collections.emptyList();
+
+    /** The list of employee shown to the user most recently.  */
+    private List<? extends ReadOnlyEmployee> lastShownEmployeeList = Collections.emptyList();
 
     public Logic() throws Exception{
         setStorage(initializeStorage());
@@ -89,6 +92,12 @@ public class Logic {
     /**
      * Unmodifiable view of the current last shown order list.
      */
+    public List<ReadOnlyEmployee> getLastShownEmployeeList() { return Collections.unmodifiableList(lastShownEmployeeList);
+    }
+
+    /**
+     * Unmodifiable view of the current last shown order list.
+     */
     public List<ReadOnlyOrder> getLastShownOrderList() {
         return Collections.unmodifiableList(lastShownOrderList);
     }
@@ -107,6 +116,9 @@ public class Logic {
 
     protected void setLastShownMemberList(List<? extends ReadOnlyMember> newList) {
         lastShownMemberList = newList;
+    }
+
+    protected void setLastShownEmployeeList(List<? extends ReadOnlyEmployee> newList) { lastShownEmployeeList = newList;
     }
 
     /**
@@ -128,7 +140,7 @@ public class Logic {
      * @throws Exception if there was any problem during command execution.
      */
     private CommandResult execute(Command command) throws Exception {
-        command.setData(rms, lastShownList, lastShownMenuList, lastShownOrderList, lastShownMemberList);
+        command.setData(rms, lastShownList, lastShownMenuList, lastShownOrderList, lastShownMemberList, lastShownEmployeeList);
         CommandResult result = command.execute();
         storage.save(rms);
         return result;
@@ -140,6 +152,7 @@ public class Logic {
         final Optional<List<? extends ReadOnlyMenus>> menuList = result.getRelevantMenus();
         final Optional<List<? extends ReadOnlyOrder>> orderList = result.getRelevantOrders();
         final Optional<List<? extends ReadOnlyMember>> memberList = result.getRelevantMember();
+        final Optional<List<? extends ReadOnlyEmployee>> employeeList = result.getRelevantEmployee();
         if (personList.isPresent()) {
             lastShownList = personList.get();
         }
@@ -151,6 +164,9 @@ public class Logic {
         }
         if (memberList.isPresent()) {
             lastShownMemberList = memberList.get();
+        }
+        if (employeeList.isPresent()) {
+            lastShownEmployeeList = employeeList.get();
         }
     }
 }

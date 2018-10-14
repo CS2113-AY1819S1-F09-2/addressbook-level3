@@ -11,6 +11,7 @@ import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.order.ReadOnlyOrder;
 import seedu.addressbook.data.person.ReadOnlyPerson;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 import seedu.addressbook.logic.Logic;
 
 import java.util.List;
@@ -87,6 +88,7 @@ public class MainWindow {
         final Optional<List<? extends ReadOnlyMenus>> resultMenus = result.getRelevantMenus();
         final Optional<List<? extends ReadOnlyOrder>> resultOrders = result.getRelevantOrders();
         final Optional<List<? extends ReadOnlyMember>> resultMembers = result.getRelevantMember();
+        final Optional<List<? extends ReadOnlyEmployee>> resultEmployees = result.getRelevantEmployee();
         if(resultPersons.isPresent()) {
             display(resultPersons.get());
         } else if (resultOrders.isPresent()) {
@@ -95,6 +97,8 @@ public class MainWindow {
             displayMenuResult(resultMenus.get());
         } else if(resultMembers.isPresent()) {
             displayMemberResult(resultMembers.get());
+        } else if(resultEmployees.isPresent()) {
+            displayEmployeeResult(resultEmployees.get());
         }
         display(result.feedbackToUser);
     }
@@ -135,6 +139,13 @@ public class MainWindow {
      */
     private void displayMenuResult(List<? extends ReadOnlyMenus> menus) {
         display(new Formatter().formatMenuResult(menus));
+    }
+
+    /**
+     * Displays the employee list in the output display area, formatted as an indexed list.
+     */
+    private void displayEmployeeResult(List<? extends ReadOnlyEmployee> employees) {
+        display(new Formatter().formatEmployeeResult(employees));
     }
 
     /**

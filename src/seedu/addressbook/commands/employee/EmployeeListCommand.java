@@ -2,7 +2,7 @@ package seedu.addressbook.commands.employee;
 
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.CommandResult;
-import seedu.addressbook.data.person.ReadOnlyPerson;
+import seedu.addressbook.data.employee.ReadOnlyEmployee;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class EmployeeListCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        List<ReadOnlyPerson> allEmployees = rms.getAllEmployees().immutableListView();
-        return new CommandResult(getMessageForPersonListShownSummary(allEmployees), allEmployees);
+        List<ReadOnlyEmployee> allEmployees = rms.getAllEmployees().immutableListView();
+        return new EmployeeCommandResult(getMessageForEmployeeListShownSummary(allEmployees), allEmployees);
     }
 }
