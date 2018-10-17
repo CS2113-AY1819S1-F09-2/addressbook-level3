@@ -34,7 +34,7 @@ public class AdaptedEmployee {
 
     public AdaptedEmployee(ReadOnlyEmployee source) {
 
-        name = source.getName().fullName;
+        name = source.getName().value;
 
         phone= source.getPhone().value;
 
@@ -42,7 +42,7 @@ public class AdaptedEmployee {
 
         address = source.getAddress().value;
 
-        position = source.getPosition().position;
+        position = source.getPosition().value;
     }
 
     /**

@@ -30,18 +30,19 @@ public interface ReadOnlyEmployee {
     // Deal with this after creating variable classes
     /**
      * Formats the Employee as text, showing all details.
+     * Value of each attribute is trimmed to prevent whitespace errors during tests
      */
     default String getAsTextShowDetails() {
         final StringBuilder builder = new StringBuilder();
-        builder.append(getName())
+        builder.append(getName().value.trim())
                 .append(" Phone: ");
-        builder.append(getPhone())
+        builder.append(getPhone().value.trim())
                 .append(" Email: ");
-        builder.append(getEmail())
+        builder.append(getEmail().value.trim())
                 .append(" Address: ");
-        builder.append(getAddress())
-                .append(" \nPosition: ");
-        builder.append(getPosition());
+        builder.append(getAddress().value.trim())
+                .append(" Position: ");
+        builder.append(getPosition().value.trim());
         return builder.toString();
     }
 

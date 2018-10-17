@@ -13,22 +13,22 @@ public class EmployeePosition {
 
 
     public static final String EXAMPLE = "Cashier";
-    public static final String MESSAGE_NAME_CONSTRAINTS = "Employee position should be spaces or alphanumeric characters";
+    public static final String MESSAGE_POSITION_CONSTRAINTS = "Employee position should be spaces or alphanumeric characters";
     public static final String POSITION_VALIDATION_REGEX = "[\\p{Alnum} ]+";
 
-    public final String position;
+    public final String value;
 
     /**
      * Validates given name.
      *
      * @throws IllegalValueException if given name string is invalid.
      */
-    public EmployeePosition(String position) throws IllegalValueException {
-        position = position.trim();
-        if (!isValidPosition(position)) {
-            throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
+    public EmployeePosition(String value) throws IllegalValueException {
+        value = value.trim();
+        if (!isValidPosition(value)) {
+            throw new IllegalValueException(MESSAGE_POSITION_CONSTRAINTS);
         }
-        this.position = position;
+        this.value = value;
     }
 
     /**
@@ -42,22 +42,22 @@ public class EmployeePosition {
      * Retrieves a listing of every word in the name, in order.
      */
     public List<String> getWordsInName() {
-        return Arrays.asList(position.split("\\s+"));
+        return Arrays.asList(value.split("\\s+"));
     }
 
     @Override
     public String toString() {
-        return position;
+        return value;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof EmployeePosition // instanceof handles nulls
-                && this.position.equals(((EmployeePosition) other).position)); // state check
+                && this.value.equals(((EmployeePosition) other).value)); // state check
     }
 
     @Override
-    public int hashCode() { return position.hashCode();
+    public int hashCode() { return value.hashCode();
     }
 }

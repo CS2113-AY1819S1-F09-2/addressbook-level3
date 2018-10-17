@@ -244,7 +244,7 @@ Format: edit NAME [p/PHONE_NUMBER] [pos/POSITION]
 
 Examples: +
 edit Joe Bob pos/Cashier +
-Edits the position of Joe Bob to Cashier
+Edits the value of Joe Bob to Cashier
 
 === Delete Employee
 

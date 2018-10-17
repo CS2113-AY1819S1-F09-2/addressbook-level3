@@ -30,6 +30,13 @@ public class Parser {
                     + " (?<isAddressPrivate>p?)a/(?<address>[^/]+)"
                     + "(?<tagArguments>(?: t/[^/]+)*)"); // variable number of tags
 
+    public static final Pattern EMPLOYEE_DATA_ARGS_FORMAT = // '/' forward slashes are reserved for delimiter prefixes
+            Pattern.compile("(?<name>[^/]+)"
+                    + "p/(?<phone>[^/]+)"
+                    + "e/(?<email>[^/]+)"
+                    + "a/(?<address>[^/]+)"
+                    + "pos/(?<position>[^/]+)");
+
     public static final Pattern MENU_DATA_ARGS_FORMAT = // '/' forward slashes are reserved for delimiter prefixes
             Pattern.compile("(?<name>[^/]+)"
                     + " p/(?<price>[^/]+)"
@@ -105,7 +112,10 @@ public class Parser {
                 return new EmployeeListCommand();
 
             case EmployeeAddCommand.COMMAND_WORD:
-                return prepareEmpAdd(arguments);
+                return prepareEmployeeAdd(arguments);
+
+            case EmployeeDeleteCommand.COMMAND_WORD:
+                return prepareEmployeeDelete(arguments);
 
             case MenuViewAllCommand.COMMAND_WORD:
                 return prepareViewAllMenu(arguments);
@@ -195,8 +205,8 @@ public class Parser {
      * @param args full command args string
      * @return the prepared command
      */
-    private Command prepareEmpAdd(String args){
-        final Matcher matcher = PERSON_DATA_ARGS_FORMAT.matcher(args.trim());
+    private Command prepareEmployeeAdd(String args){
+        final Matcher matcher = EMPLOYEE_DATA_ARGS_FORMAT.matcher(args.trim());
         // Validate arg string format
         if (!matcher.matches()) {
             return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EmployeeAddCommand.MESSAGE_USAGE));
@@ -218,6 +228,21 @@ public class Parser {
         }
     }
 
+    /**
+     * Parses arguments in the context of the delete employee command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
+    private Command prepareEmployeeDelete(String args) {
+        try {
+            final int targetIndex = parseArgsAsDisplayedIndex(args);
+            return new EmployeeDeleteCommand(targetIndex);
+        } catch (ParseException | NumberFormatException e) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EmployeeDeleteCommand.MESSAGE_USAGE));
+        }
+    }
+    
     /**
      * Checks whether the private prefix of a contact detail in the add command's arguments string is present.
      */

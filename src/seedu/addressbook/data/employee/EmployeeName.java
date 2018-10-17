@@ -17,7 +17,7 @@ public class EmployeeName {
     public static final String MESSAGE_NAME_CONSTRAINTS = "Employee names should be spaces or alphanumeric characters";
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alnum} ]+";
 
-    public final String fullName;
+    public final String value;
 
     /**
      * Validates given name.
@@ -29,7 +29,7 @@ public class EmployeeName {
         if (!isValidName(name)) {
             throw new IllegalValueException(MESSAGE_NAME_CONSTRAINTS);
         }
-        this.fullName = name;
+        this.value = name;
     }
 
     /**
@@ -43,23 +43,23 @@ public class EmployeeName {
      * Retrieves a listing of every word in the name, in order.
      */
     public List<String> getWordsInName() {
-        return Arrays.asList(fullName.split("\\s+"));
+        return Arrays.asList(value.split("\\s+"));
     }
 
     @Override
     public String toString() {
-        return fullName;
+        return value;
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof EmployeeName // instanceof handles nulls
-                && this.fullName.equals(((EmployeeName) other).fullName)); // state check
+                && this.value.equals(((EmployeeName) other).value)); // state check
     }
 
     @Override
     public int hashCode() {
-        return fullName.hashCode();
+        return value.hashCode();
     }
 }
