@@ -9,7 +9,7 @@ import seedu.addressbook.data.exception.IllegalValueException;
 public class Price {
 
     public static final String EXAMPLE = "440";
-    public static final String MESSAGE_PHONE_CONSTRAINTS = "Price should be in SGD and in dollars and cents";
+    public static final String MESSAGE_PRICE_CONSTRAINTS = "Price should be in SGD and in dollars and cents";
     public static final String PHONE_VALIDATION_REGEX = "\\d+";//"^\\$\\d+([.][0-9]+)?$";
 
     public final String value;
@@ -24,7 +24,7 @@ public class Price {
         //this.isPrivate = isPrivate;
         price = price.trim();
         if (!isValidPhone(price)) {
-            throw new IllegalValueException(MESSAGE_PHONE_CONSTRAINTS);
+            throw new IllegalValueException(MESSAGE_PRICE_CONSTRAINTS);
         }
         this.value = price;
     }

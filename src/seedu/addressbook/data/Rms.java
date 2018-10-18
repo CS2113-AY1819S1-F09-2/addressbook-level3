@@ -32,9 +32,9 @@ public class Rms {
 
     private final UniquePersonList allPersons;
     private final UniqueEmployeeList allEmployees;
+    private final UniqueMemberList allMembers;
     private final UniqueMenuList allFoodItems;
     private final UniqueOrderList allOrders;
-    private final UniqueMemberList allMembers;
 
     public static Rms empty() {
         return new Rms();
@@ -48,9 +48,9 @@ public class Rms {
 
         allPersons = new UniquePersonList();
         allEmployees = new UniqueEmployeeList();
+        allMembers = new UniqueMemberList();
         allFoodItems = new UniqueMenuList();
         allOrders = new UniqueOrderList();
-        allMembers = new UniqueMemberList();
     }
 
     /**
@@ -66,9 +66,9 @@ public class Rms {
                UniqueMemberList members) {
         this.allPersons = new UniquePersonList(persons);
         this.allEmployees = new UniqueEmployeeList(employees);
+        this.allMembers = new UniqueMemberList(members);
         this.allFoodItems = new UniqueMenuList(menus);
         this.allOrders = new UniqueOrderList(orders);
-        this.allMembers = new UniqueMemberList(members);
     }
 
     /**
@@ -85,17 +85,6 @@ public class Rms {
      */
     public void addEmployee(Employee toAdd) throws DuplicateEmployeeException { allEmployees.add(toAdd); }
 
-    /**
-     * Adds a menu item to the menu list.
-     */
-    public void addMenu(Menu toAdd) throws DuplicateMenuException { allFoodItems.add(toAdd); }
-
-    /**
-     * Adds an order to the order list.
-     */
-    public void addOrder(Order toAdd) {
-        allOrders.add(toAdd);
-    }
 
     /**
      * Adds a member to the address book.
@@ -105,6 +94,20 @@ public class Rms {
 
     public void addMember(Member toAdd) throws DuplicateMemberException {
         allMembers.add(toAdd);
+    }
+
+    /**
+     * Adds a menu item to the menu list.
+     *
+     * @throws DuplicateMenuException if an equivalent member already exists.
+     */
+    public void addMenu(Menu toAdd) throws DuplicateMenuException { allFoodItems.add(toAdd); }
+
+    /**
+     * Adds an order to the order list.
+     */
+    public void addOrder(Order toAdd) {
+        allOrders.add(toAdd);
     }
 
     /**
@@ -197,20 +200,6 @@ public class Rms {
     }
 
     /**
-     * Clears all menu items from the menu.
-     */
-    public void clearMenu() {
-        allFoodItems.clear();
-    }
-
-    /**
-     * Clears all orders from the order list.
-     */
-    public void clearOrderList() {
-        allOrders.clear();
-    }
-
-    /**
      * Clears all members from the address book.
      */
     public void clearMembers() {
@@ -222,6 +211,20 @@ public class Rms {
      */
     public void clearEmployee() {
         allEmployees.clear();
+    }
+
+    /**
+     * Clears all menu items from the menu.
+     */
+    public void clearMenu() {
+        allFoodItems.clear();
+    }
+
+    /**
+     * Clears all orders from the order list.
+     */
+    public void clearOrderList() {
+        allOrders.clear();
     }
 
     /**

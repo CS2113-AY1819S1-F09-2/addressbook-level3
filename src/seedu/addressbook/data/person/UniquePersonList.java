@@ -18,6 +18,7 @@ public class UniquePersonList implements Iterable<Person> {
      */
     public static class DuplicatePersonException extends DuplicateDataException {
         protected DuplicatePersonException() {
+
             super("Operation would result in duplicate persons");
         }
     }

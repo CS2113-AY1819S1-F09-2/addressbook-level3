@@ -43,10 +43,6 @@
         <name>cheesebaconfries</name>
         <price isPrivate="false">55</price>
     </menus>
-    <menus>
-        <name>cheesy cheese burger</name>
-        <price isPrivate="false">5</price>
-    </menus>
     <members>
         <name>Kang Ming</name>
         <points>0</points>

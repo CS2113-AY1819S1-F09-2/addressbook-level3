@@ -2,6 +2,7 @@ package seedu.addressbook.logic;
 
 import seedu.addressbook.commands.Command;
 import seedu.addressbook.commands.CommandResult;
+import seedu.addressbook.commands.menu.MenuCommandResult;
 import seedu.addressbook.data.member.ReadOnlyMember;
 import seedu.addressbook.data.menu.ReadOnlyMenus;
 import seedu.addressbook.data.order.ReadOnlyOrder;
@@ -26,11 +27,11 @@ public class Logic {
     /** The list of person shown to the user most recently.  */
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
 
-    /** The list of menu shown to the user most recently.  */
-    private List<? extends ReadOnlyMenus> lastShownMenuList = Collections.emptyList();
-
     /** The list of member shown to the user most recently.  */
     private List<? extends ReadOnlyMember> lastShownMemberList = Collections.emptyList();
+
+    /** The list of menu shown to the user most recently.  */
+    private List<? extends ReadOnlyMenus> lastShownMenuList = Collections.emptyList();
 
     /** The list of order shown to the user most recently.  */
     private List<? extends ReadOnlyOrder> lastShownOrderList = Collections.emptyList();
@@ -76,13 +77,6 @@ public class Logic {
     }
 
     /**
-     * Unmodifiable view of the current last shown menu list.
-     */
-    public List<ReadOnlyMenus> getLastShownMenuList() {
-        return Collections.unmodifiableList(lastShownMenuList);
-    }
-
-    /**
      * Unmodifiable view of the current last shown member list.
      */
     public List<ReadOnlyMember> getLastShownMemberList() {
@@ -93,6 +87,13 @@ public class Logic {
      * Unmodifiable view of the current last shown order list.
      */
     public List<ReadOnlyEmployee> getLastShownEmployeeList() { return Collections.unmodifiableList(lastShownEmployeeList);
+    }
+
+    /**
+     * Unmodifiable view of the current last shown menu list.
+     */
+    public List<ReadOnlyMenus> getLastShownMenuList() {
+        return Collections.unmodifiableList(lastShownMenuList);
     }
 
     /**

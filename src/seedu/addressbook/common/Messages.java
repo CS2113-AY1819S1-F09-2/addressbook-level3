@@ -28,10 +28,10 @@ public class Messages {
     public static final String MESSAGE_PROGRAM_LAUNCH_ARGS_USAGE = "Launch command format: " +
             "java seedu.addressbook.Main [STORAGE_FILE_PATH]";
     public static final String MESSAGE_WELCOME = "Welcome to Restaurant Management System! \n" +
+            "- To access EMPLOYEE DATABASE, key in 'employee'\n" +
+            "- To access MEMBER DATABASE, key in 'customer'\n" +
             "- To access MENU, key in 'menu\n" +
             "- To access ORDER, key in 'order'\n" +
-            "- To access CUSTOMER DATABASE, key in 'customer'\n" +
-            "- To access EMPLOYEE DATABASE, key in 'employee'\n" +
             "- To access STATISITCS information, key in 'statisitics'\n" +
             "- For further assistance, key in 'help'\n" +
             "----------------------------------------------------------";

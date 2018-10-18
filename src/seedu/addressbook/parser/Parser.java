@@ -41,13 +41,14 @@ public class Parser {
                     + "a/(?<address>[^/]+)"
                     + "pos/(?<position>[^/]+)");
 
+    public static final Pattern MEMBER_DATA_ARGS_FORMAT =
+            Pattern.compile("(?<name>[^/]+)"); // variable number of tags
+
     public static final Pattern MENU_DATA_ARGS_FORMAT = // '/' forward slashes are reserved for delimiter prefixes
             Pattern.compile("(?<name>[^/]+)"
                     + " p/(?<price>[^/]+)"
                     + "(?<tagArguments>(?: t/[^/]+)*)"); // variable number of tags
 
-    public static final Pattern MEMBER_DATA_ARGS_FORMAT =
-            Pattern.compile("(?<name>[^/]+)"); // variable number of tags
 
 
     /**
@@ -83,9 +84,6 @@ public class Parser {
             case AddCommand.COMMAND_WORD:
                 return prepareAdd(arguments);
 
-            case MenuAddCommand.COMMAND_WORD:
-                return prepareAddMenu(arguments);
-
             case MemberAddCommand.COMMAND_WORD:
                 return prepareAddMember(arguments);
 
@@ -101,9 +99,6 @@ public class Parser {
             case ListCommand.COMMAND_WORD:
                 return new ListCommand();
 
-            case MenuListCommand.COMMAND_WORD:
-                return new MenuListCommand();
-
             case ViewCommand.COMMAND_WORD:
                 return prepareView(arguments);
 
@@ -118,6 +113,12 @@ public class Parser {
 
             case EmployeeDeleteCommand.COMMAND_WORD:
                 return prepareEmployeeDelete(arguments);
+
+            case MenuAddCommand.COMMAND_WORD:
+                return prepareAddMenu(arguments);
+
+            case MenuListCommand.COMMAND_WORD:
+                return new MenuListCommand();
 
             case MenuViewAllCommand.COMMAND_WORD:
                 return prepareViewAllMenu(arguments);
@@ -193,26 +194,6 @@ public class Parser {
         }
     }
 
-    private Command prepareAddMenu(String args){
-        final Matcher matcher = MENU_DATA_ARGS_FORMAT.matcher(args.trim());
-        // Validate arg string format
-        if (!matcher.matches()) {
-            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MenuAddCommand.MESSAGE_USAGE));
-        }
-        try {
-            return new MenuAddCommand(
-                    matcher.group("name"),
-
-                    matcher.group("price"),
-                    //isPrivatePrefixPresent(matcher.group("isPricePrivate")),
-
-                    getTagsFromArgs(matcher.group("tagArguments"))
-            );
-        } catch (IllegalValueException ive) {
-            return new IncorrectCommand(ive.getMessage());
-        }
-    }
-
     /**
      * Parses arguments in the context of the add member command.
      * @param args full command args string
@@ -262,6 +243,33 @@ public class Parser {
             return new IncorrectCommand(ive.getMessage());
         }
     }
+
+    /**
+     * Parses arguments in the context of the add menu command.
+     *
+     * @param args full command args string
+     * @return the prepared command
+     */
+    private Command prepareAddMenu(String args){
+        final Matcher matcher = MENU_DATA_ARGS_FORMAT.matcher(args.trim());
+        // Validate arg string format
+        if (!matcher.matches()) {
+            return new IncorrectCommand(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MenuAddCommand.MESSAGE_USAGE));
+        }
+        try {
+            return new MenuAddCommand(
+                    matcher.group("name"),
+
+                    matcher.group("price"),
+                    //isPrivatePrefixPresent(matcher.group("isPricePrivate")),
+
+                    getTagsFromArgs(matcher.group("tagArguments"))
+            );
+        } catch (IllegalValueException ive) {
+            return new IncorrectCommand(ive.getMessage());
+        }
+    }
+
 
     /**
      * Parses arguments in the context of the delete employee command.

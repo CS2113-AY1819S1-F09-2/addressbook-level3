@@ -57,10 +57,11 @@ public class MenuAddCommand extends Command {
     public CommandResult execute() {
         try {
             rms.addMenu(toAddFoodItem);
-            return new MenuCommandResult(String.format(MESSAGE_SUCCESS, toAddFoodItem));
+            return new CommandResult(String.format(MESSAGE_SUCCESS, toAddFoodItem));
         } catch (UniqueMenuList.DuplicateMenuException dpe) {
             return new CommandResult(MESSAGE_DUPLICATE_MENU_ITEM);
         }
     }
 
 }
+//test command

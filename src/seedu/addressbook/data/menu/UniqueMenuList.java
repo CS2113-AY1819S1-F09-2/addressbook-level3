@@ -18,6 +18,7 @@ public class UniqueMenuList implements Iterable<Menu> {
      */
     public static class DuplicateMenuException extends DuplicateDataException {
         protected DuplicateMenuException() {
+
             super("Operation would result in duplicate menu items");
         }
     }
@@ -28,7 +29,7 @@ public class UniqueMenuList implements Iterable<Menu> {
      */
     public static class MenuNotFoundException extends Exception {}
 
-    private final List<Menu> internalList = new ArrayList<>();
+    private final List<Menu> internalMenuList = new ArrayList<>();
 
     /**
      * Constructs empty menu list.
@@ -43,7 +44,7 @@ public class UniqueMenuList implements Iterable<Menu> {
         if (!Utils.elementsAreUnique(initialTags)) {
             throw new DuplicateMenuException();
         }
-        internalList.addAll(initialTags);
+        internalMenuList.addAll(initialTags);
     }
 
     /**
@@ -55,14 +56,14 @@ public class UniqueMenuList implements Iterable<Menu> {
         if (!Utils.elementsAreUnique(menus)) {
             throw new DuplicateMenuException();
         }
-        internalList.addAll(menus);
+        internalMenuList.addAll(menus);
     }
 
     /**
      * Constructs a shallow copy of the list.
      */
     public UniqueMenuList(UniqueMenuList source) {
-        internalList.addAll(source.internalList);
+        internalMenuList.addAll(source.internalMenuList);
     }
 
     /**
@@ -71,7 +72,7 @@ public class UniqueMenuList implements Iterable<Menu> {
      * Any changes to the internal list/elements are immediately visible in the returned list.
      */
     public List<ReadOnlyMenus> immutableListView() {
-        return Collections.unmodifiableList(internalList);
+        return Collections.unmodifiableList(internalMenuList);
     }
 
 
@@ -79,7 +80,7 @@ public class UniqueMenuList implements Iterable<Menu> {
      * Checks if the list contains an equivalent menu item as the given argument.
      */
     public boolean contains(ReadOnlyMenus toCheck) {
-        return internalList.contains(toCheck);
+        return internalMenuList.contains(toCheck);
     }
 
     /**
@@ -91,7 +92,7 @@ public class UniqueMenuList implements Iterable<Menu> {
         if (contains(toAdd)) {
             throw new DuplicateMenuException();
         }
-        internalList.add(toAdd);
+        internalMenuList.add(toAdd);
     }
 
     /**
@@ -100,7 +101,7 @@ public class UniqueMenuList implements Iterable<Menu> {
      * @throws MenuNotFoundException if no such menu item could be found in the list.
      */
     public void remove(ReadOnlyMenus toRemove) throws MenuNotFoundException {
-        final boolean menuFoundAndDeleted = internalList.remove(toRemove);
+        final boolean menuFoundAndDeleted = internalMenuList.remove(toRemove);
         if (!menuFoundAndDeleted) {
             throw new MenuNotFoundException();
         }
@@ -110,25 +111,25 @@ public class UniqueMenuList implements Iterable<Menu> {
      * Clears all persons in list.
      */
     public void clear() {
-        internalList.clear();
+        internalMenuList.clear();
     }
 
     @Override
     public Iterator<Menu> iterator() {
-        return internalList.iterator();
+        return internalMenuList.iterator();
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof UniqueMenuList // instanceof handles nulls
-                && this.internalList.equals(
-                        ((UniqueMenuList) other).internalList));
+                && this.internalMenuList.equals(
+                        ((UniqueMenuList) other).internalMenuList));
     }
 
     @Override
     public int hashCode() {
-        return internalList.hashCode();
+        return internalMenuList.hashCode();
     }
 
 }

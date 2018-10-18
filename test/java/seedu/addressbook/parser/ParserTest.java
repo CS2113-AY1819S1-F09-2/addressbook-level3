@@ -332,9 +332,9 @@ public class ParserTest {
         }
     }
 
-    //Testing for valid Food Item Data parsed correctly
     /*
 
+    //Testing for valid Food Item Data parsed correctly
 
     @Test
     public void addmenuCommand_validFoodItemData_parsedCorrectly() {
@@ -343,7 +343,7 @@ public class ParserTest {
         final MenuAddCommand result = parseAndAssertCommandType(input, MenuAddCommand.class);
         assertEquals(result.getMenu(), testMenu);
     }
-    */
+
 
     /*
 

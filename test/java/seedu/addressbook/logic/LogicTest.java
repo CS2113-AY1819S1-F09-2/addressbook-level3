@@ -9,7 +9,7 @@ import seedu.addressbook.commands.CommandResult;
 import seedu.addressbook.commands.*;
 import seedu.addressbook.commands.employee.*;
 import seedu.addressbook.commands.member.MemberAddCommand;
-import seedu.addressbook.commands.menu.MenuViewAllCommand;
+import seedu.addressbook.commands.menu.*;
 import seedu.addressbook.common.Messages;
 import seedu.addressbook.data.Rms;
 import seedu.addressbook.data.member.Member;
@@ -90,6 +90,16 @@ public class LogicTest {
     private void assertMemberCommandBehavior(String inputCommand, String expectedMessage) throws Exception {
         assertMemberCommandBehavior(inputCommand, expectedMessage, Rms.empty(),false, Collections.emptyList());
     }
+
+    /**
+     * Executes the menu command and confirms that the result message is correct.
+     * Both the 'address book' and the 'last shown menu list' are expected to be empty.
+     * @see #assertMenuCommandBehavior(String, String, Rms, boolean, List)
+     */
+    private void assertMenuCommandBehavior(String inputCommand, String expectedMessage) throws Exception {
+        assertMenuCommandBehavior(inputCommand, expectedMessage, Rms.empty(), false, Collections.emptyList());
+    }
+
 
     /**
      * Executes the command and confirms that the result message is correct and
@@ -177,15 +187,6 @@ public class LogicTest {
         assertEquals(lastShownList, logic.getLastShownMemberList());
         assertEquals(rms, saveFile.load());
     }
-    /**
-     * Executes the menu command and confirms that the result message is correct.
-     * Both the 'address book' and the 'last shown menu list' are expected to be empty.
-     * @see #assertMenuCommandBehavior(String, String, Rms, boolean, List)
-     */
-    private void assertMenuCommandBehavior(String inputCommand, String expectedMessage) throws Exception {
-        assertMenuCommandBehavior(inputCommand, expectedMessage, Rms.empty(), false, Collections.emptyList());
-    }
-
 
     /**
      * Executes the menu command and confirms that the result message is correct and
@@ -279,6 +280,15 @@ public class LogicTest {
     }
 
     @Test
+    public void execute_addmenu_invalidArgsFormat() throws Exception {
+        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, MenuAddCommand.MESSAGE_USAGE);
+        assertMenuCommandBehavior(
+                "addmenu wrong args wrong args", expectedMessage);
+        assertMenuCommandBehavior(
+                "addmenu Valid Name 12345", expectedMessage);
+    }
+
+    @Test
     public void execute_add_invalidPersonData() throws Exception {
         assertCommandBehavior(
                 "add []\\[;] p/12345 e/valid@e.mail a/valid, address", Name.MESSAGE_NAME_CONSTRAINTS);
@@ -301,6 +311,17 @@ public class LogicTest {
                 "addemp Valid Name p/12345 e/notAnEmail a/valid, address pos/validPos", EmployeeEmail.MESSAGE_EMAIL_CONSTRAINTS);
         assertEmployeeCommandBehavior(
                 "addemp Valid Name p/12345 e/valid@e.mail a/valid, address pos/@#%&%", EmployeePosition.MESSAGE_POSITION_CONSTRAINTS);
+
+    }
+
+    @Test
+    public void execute_addmenu_invalidMenuData() throws Exception {
+        assertMenuCommandBehavior(
+                "addmenu []\\[;] p/12345", MenuName.MESSAGE_NAME_CONSTRAINTS);
+        assertMenuCommandBehavior(
+                "addmenu Valid Name p/not_numbers", Price.MESSAGE_PRICE_CONSTRAINTS);
+        assertMenuCommandBehavior(
+                "addmenu Valid Name p/12345 t/invalid_-[.tag", Tag.MESSAGE_TAG_CONSTRAINTS);
 
     }
 
@@ -356,6 +377,23 @@ public class LogicTest {
     }
 
     @Test
+    public void execute_addmenu_successful() throws Exception {
+        // setup expectations
+        TestDataHelper helper = new TestDataHelper();
+        Menu toBeAdded = helper.burger();
+        Rms expectedAB = new Rms();
+        expectedAB.addMenu(toBeAdded);
+
+        // execute command and verify result
+        assertMenuCommandBehavior(helper.generateMenuAddCommand(toBeAdded),
+                String.format(MenuAddCommand.MESSAGE_SUCCESS, toBeAdded),
+                expectedAB,
+                false,
+                Collections.emptyList());
+
+    }
+
+    @Test
     public void execute_addDuplicate_notAllowed() throws Exception {
         // setup expectations
         TestDataHelper helper = new TestDataHelper();
@@ -396,6 +434,7 @@ public class LogicTest {
                 Collections.emptyList());
     }
 
+
     @Test
     public void execute_list_showsAllPersons() throws Exception {
         // prepare expectations
@@ -415,7 +454,7 @@ public class LogicTest {
 
     //test for MenuListCommand
     @Test
-    public void execute_list_showsAllMenuItems() throws Exception {
+    public void execute_listmenu_showsAllMenuItems() throws Exception {
         // prepare expectations
         // TestDataHelper helper = new TestDataHelper();
         Rms expectedRMS = new Rms();
@@ -649,6 +688,14 @@ public class LogicTest {
     }
 
     @Test
+    public void execute_deletemenu_invalidArgsFormat() throws Exception {
+        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, MenuDeleteCommand.MESSAGE_USAGE);
+        assertMenuCommandBehavior("deletemenu ", expectedMessage);
+        assertMenuCommandBehavior("deletemenu arg not number", expectedMessage);
+    }
+
+
+    @Test
     public void execute_delete_invalidIndex() throws Exception {
         assertInvalidIndexBehaviorForCommand("delete");
     }
@@ -657,6 +704,7 @@ public class LogicTest {
     public void execute_delemp_invalidIndex() throws Exception {
         assertInvalidIndexBehaviorForEmployeeCommand("delemp");
     }
+
 
     @Test
     public void execute_delete_removesCorrectPerson() throws Exception {
@@ -967,6 +1015,24 @@ public class LogicTest {
             return cmd.toString();
         }
 
+        /** Generates the correct add menu command based on the menu item given */
+        String generateMenuAddCommand(Menu m) {
+            StringJoiner cmd = new StringJoiner(" ");
+
+            cmd.add("addmenu");
+
+            cmd.add(m.getName().toString());
+            cmd.add(("p/") + m.getPrice());
+
+            Set<Tag> tags = m.getTags();
+            for(Tag t: tags){
+                cmd.add("t/" + t.tagName);
+            }
+
+            return cmd.toString();
+        }
+
+
         /**
          * Generates an Rms with auto-generated persons.
          * @param isPrivateStatuses flags to indicate if all contact details of respective persons should be set to
@@ -1006,7 +1072,7 @@ public class LogicTest {
         }
 
         /**
-         * Generates an Rms based on the list of Menu given.
+         * Generates an Rms based on the list of Member given.
          */
         Rms generateRmsMember(List<Member> members) throws Exception{
             Rms rms = new Rms();

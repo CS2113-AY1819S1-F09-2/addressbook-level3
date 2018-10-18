@@ -18,7 +18,7 @@ By: `CS2113-AY1819S1-F09-2`      Since: `Aug 2018`      Licence: `MIT`
 
 == Introduction
 
-Food Management System is to help provide restaurants
+Restaurant Management System is to help provide restaurants
  with a more efficient way to manage their restaurants.
   It has various amount of features that can improve
    productivity of the different staff members in the
@@ -29,6 +29,24 @@ Food Management System is to help provide restaurants
 
 *[Coming Soon]*
 
+.  Ensure you have Java version `9` or later installed in your Computer.
+.  Copy the file to the folder you want to use as the home folder for your Restaurant Management System.
+.  Import the file into Intellij.
+.  Find the project pane (usually located at the left side).
+.  Open up src/seedu.addressbook folder.
+.  Right Click on `Main`.
+.  Click `Run Main.main()`.
+.  The GUI should appear in a few seconds.
++
+image::Ui.png[]
++
+.  Type the command in the command box and press kbd:[Enter] to execute it.
+.  Some example commands you can try:
+
+* *`listmenu`* : lists all menu items
+* **`addmember`**`n/John Doe p/98765432 e/johnd@example.com d/10182017` : adds a member named `John Doe` to the Restaurant Management System.
+* **`deleteorder`**`3` : deletes the 3rd order shown in the current list
+* *`exit`* : exits the app
 .  Refer to <<Features>> for details of each command.
 
 [[Features]]
@@ -58,17 +76,65 @@ When the application is first started, users have to choose
 ====
 
 === Menu
-==== View Menu
 
-View all items inside the menu +
-Format: view
+==== List Menu
+
+Shows a list of all the menu items. +
+
+Each menu item include details of: menu item, price and any relevant tags. +
+
+Format: `listmenu`
+
+==== View All Menu
+
+Shows the detail of the a menu item with a particular index. +
+Format: `viewallmenu INDEX`
 
 * List the current food items in the menu
 
+==== Add Menu Item
+
+Add a new item to the menu. +
+Format: `addmenu NAME p/PRICE [t/TAG]`
+
+* Adds the new menu item into the menu list
+
+Example: +
+add Cheese Fries p/3.50 t/New item +
+System adds Cheese Fries to the existing menu.
+//
+//
+//==== Edit Menu Item
+//
+//Edit a menu item on the menu +
+//Format: `editmenu INDEX [n/NAME] //[p/PRICE] [t/TAG]`
+//
+//* Edits the name, price and tag of //food item in that particular index //(User able to edit either one or all //three attributes of the particular //food item)
+//
+//Example: +
+//edit 3 Cheese Fries with bacon p/5.00 //t/Limited Offer +
+//System updates Cheese Fries, which is //in index 3, to Cheese Fries with //bacon and changes the price from //$3.50 to $5.00
+//
+
+==== Delete Item
+
+Delete an item on the menu +
+Format: `deletemenu INDEX`
+
+* Deletes the menu item in that particular index
+
+Example: +
+view menu +
+delete 1 +
+System deletes food item in index 1 from the menu. +
+find Cheese Fries +
+Delete 3 +
+System deletes Cheese Fries in index 3 from the menu.
+
 ==== Find Menu
 
-Finds the food item(s) related to the keywords typed in by the user. +
-Format: find KEYWORD [MORE KEYWORDS]
+Finds the menu item(s) related to the keywords typed in by the user. +
+Format: `findmenu KEYWORD [MORE KEYWORDS]`
 
 * A list of menu items with names related to the keyword(s) will be displayed.
 * The command is case insensitive.
@@ -78,50 +144,16 @@ Example: +
 find Burger COKE fries +
 Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries
 
-==== Update Menu
+//==== Update Menu
+//
+//Shows options that you can use to update the menu. +
+//Format: update
+//
+//* Update Menu will show user what he/ she can do to update menu.
+//* Menu is updated by adding, editing or deleting food items from menu list.
 
-Shows options that you can use to update the menu. +
-Format: update
 
-* Update Menu will show user what he/ she can do to update menu.
-* Menu is updated by adding, editing or deleting food items from menu list.
 
-==== Add Item
-
-Add a new item to the menu and sorts the menu. +
-Format: add NAME p/PRICE [t/TAG]
-
-* Adds the new food item into the menu list
-
-Example: +
-add Cheese Fries p/3.50 t/New item +
-System adds Cheese Fries to the existing menu.
-
-==== Edit Item
-
-Edit an item on the menu +
-Format: edit INDEX [n/NAME] [p/PRICE] [t/TAG]
-
-* Edits the name, price and tag of food item in that particular index (User able to edit either one or all three attributes of the particular food item)
-
-Example: +
-edit 3 Cheese Fries with bacon p/5.00 t/Limited Offer +
-System updates Cheese Fries, which is in index 3, to Cheese Fries with bacon and changes the price from $3.50 to $5.00
-
-==== Delete Item
-
-Delete an item on the menu +
-Format: delete INDEX
-
-* Deletes the food item in that particular index
-
-Example: +
-view menu +
-delete 1 +
-System deletes food item in index 1 from the menu. +
-find Cheese Fries +
-Delete 3 +
-System deletes Cheese Fries in index 3 from the menu.
 
 === Order
 ==== List Orders
@@ -290,17 +322,17 @@ There is no need to save manually.
 
 === Menu
 
-*View Menu* : `view`
+*View Menu* : `viewmenu`
 
-*Find Menu* : `find KEYWORD [MORE KEYWORDS]`
+*Find Menu* : `findmenu KEYWORD [MORE KEYWORDS]`
+//
+//*Update Menu* : `update`
 
-*Update Menu* : `update`
+*Add Item* : `addmenu NAME p/PRICE [t/TAG]`
 
-*Add Item* : `add NAME p/PRICE [t/TAG]`
+*Edit Item* : `editmenu INDEX [n/NAME] [p/PRICE] [t/TAG]`
 
-*Edit Item* : `edit INDEX [n/NAME] [p/PRICE] [t/TAG]`
-
-*Delete Item* : `delete INDEX`
+*Delete Item* : `deletemenu INDEX`
 
 === Order
 
