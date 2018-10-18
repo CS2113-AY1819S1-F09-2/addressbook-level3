@@ -378,11 +378,18 @@ Format: find KEYWORD [MORE_KEYWORDS]</p>
 <h4 id="add-member"><a class="link" href="#add-member">3.3.1. Add Member</a></h4>
 <div class="paragraph">
 <p>Add a new member to the RMS<br>
-Format: add NAME p/PHONE_NUMBER e/EMAIL_ADDRESS d/DATE_JOINED</p>
+Format: addmember NAME</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-member"><a class="link" href="#edit-member">3.3.2. Edit Member</a></h4>
+<h4 id="list-member"><a class="link" href="#list-member">3.3.2. List Member</a></h4>
+<div class="paragraph">
+<p>Shows a list of all the members in the RMS. Displays the NAME and POINTS of each member.<br>
+Format: listmembers</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-member"><a class="link" href="#edit-member">3.3.3. Edit Member</a></h4>
 <div class="paragraph">
 <p>Edit membership details of a member in the RMS<br>
 Format: edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</p>
@@ -396,7 +403,7 @@ Format: delete NAME</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-member"><a class="link" href="#find-member">3.3.3. Find Member</a></h4>
+<h4 id="find-member"><a class="link" href="#find-member">3.3.4. Find Member</a></h4>
 <div class="paragraph">
 <p>Find membership details of a member in the RMS<br>
 Format: find NAME</p>
@@ -496,7 +503,7 @@ Format: viewmemberstats</p>
 <div class="sect2">
 <h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.9. Saving the data</a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>Data from the Restaurant Management System are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
@@ -580,16 +587,19 @@ There is no need to save manually.</p>
 <div class="sect2">
 <h3 id="members-2"><a class="link" href="#members-2">5.4. Members</a></h3>
 <div class="paragraph">
-<p><strong>Add Member</strong> : <code>add NAME p/PHONE_NUMBER e/EMAIL_ADDRESS d/DATE_JOINED</code></p>
+<p><strong>Add Member</strong> : <code>addmember NAME</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Edit Member</strong> : <code>edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</code></p>
+<p><strong>List Member</strong> : <code>listmembers</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Delete Member</strong> : <code>delete NAME</code></p>
+<p><strong>Edit Member</strong> : <code>editmember NAME</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Find Member</strong> : <code>find NAME</code></p>
+<p><strong>Delete Member</strong> : <code>deletemember NAME</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Find Member</strong> : <code>findmember NAME</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -602,4 +612,4 @@ There is no need to save manually.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 12:09:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 12:19:33 UTC</div></div></div></body></html>
