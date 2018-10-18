@@ -41,7 +41,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Food Management System is to help provide restaurants
+<p>Restaurant Management System is to help provide restaurants
  with a more efficient way to manage their restaurants.
   It has various amount of features that can improve
    productivity of the different staff members in the
@@ -58,6 +58,57 @@
 </div>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+</li>
+<li>
+<p>Copy the file to the folder you want to use as the home folder for your Restaurant Management System.</p>
+</li>
+<li>
+<p>Import the file into Intellij.</p>
+</li>
+<li>
+<p>Find the project pane (usually located at the left side).</p>
+</li>
+<li>
+<p>Open up src/seedu.addressbook folder.</p>
+</li>
+<li>
+<p>Right Click on <code>Main</code>.</p>
+</li>
+<li>
+<p>Click <code>Run Main.main()</code>.</p>
+</li>
+<li>
+<p>The GUI should appear in a few seconds.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui">
+</div>
+</div>
+</li>
+<li>
+<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.</p>
+</li>
+<li>
+<p>Some example commands you can try:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><code>listmenu</code></strong> : lists all menu items</p>
+</li>
+<li>
+<p><strong><code>addmember</code></strong><code>n/John Doe p/98765432 e/johnd@example.com d/10182017</code> : adds a member named <code>John Doe</code> to the Restaurant Management System.</p>
+</li>
+<li>
+<p><strong><code>deleteorder</code></strong><code>3</code> : deletes the 3rd order shown in the current list</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the app</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
@@ -115,10 +166,22 @@
 <div class="sect2">
 <h3 id="menu"><a class="link" href="#menu">3.1. Menu</a></h3>
 <div class="sect3">
-<h4 id="view-menu"><a class="link" href="#view-menu">3.1.1. View Menu</a></h4>
+<h4 id="list-menu"><a class="link" href="#list-menu">3.1.1. List Menu</a></h4>
 <div class="paragraph">
-<p>View all items inside the menu<br>
-Format: view</p>
+<p>Shows a list of all the menu items.<br></p>
+</div>
+<div class="paragraph">
+<p>Each menu item include details of: menu item, price and any relevant tags.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listmenu</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="view-all-menu"><a class="link" href="#view-all-menu">3.1.2. View All Menu</a></h4>
+<div class="paragraph">
+<p>Shows the detail of the a menu item with a particular index.<br>
+Format: <code>viewallmenu INDEX</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -129,10 +192,52 @@ Format: view</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-menu"><a class="link" href="#find-menu">3.1.2. Find Menu</a></h4>
+<h4 id="add-menu-item"><a class="link" href="#add-menu-item">3.1.3. Add Menu Item</a></h4>
 <div class="paragraph">
-<p>Finds the food item(s) related to the keywords typed in by the user.<br>
-Format: find KEYWORD [MORE KEYWORDS]</p>
+<p>Add a new item to the menu.<br>
+Format: <code>addmenu NAME p/PRICE [t/TAG]</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adds the new menu item into the menu list</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+add Cheese Fries p/3.50 t/New item<br>
+System adds Cheese Fries to the existing menu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-item"><a class="link" href="#delete-item">3.1.4. Delete Item</a></h4>
+<div class="paragraph">
+<p>Delete an item on the menu<br>
+Format: <code>deletemenu INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the menu item in that particular index</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+view menu<br>
+delete 1<br>
+System deletes food item in index 1 from the menu.<br>
+find Cheese Fries<br>
+Delete 3<br>
+System deletes Cheese Fries in index 3 from the menu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find-menu"><a class="link" href="#find-menu">3.1.5. Find Menu</a></h4>
+<div class="paragraph">
+<p>Finds the menu item(s) related to the keywords typed in by the user.<br>
+Format: <code>findmenu KEYWORD [MORE KEYWORDS]</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -151,84 +256,6 @@ Format: find KEYWORD [MORE KEYWORDS]</p>
 <p>Example:<br>
 find Burger COKE fries<br>
 Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="update-menu"><a class="link" href="#update-menu">3.1.3. Update Menu</a></h4>
-<div class="paragraph">
-<p>Shows options that you can use to update the menu.<br>
-Format: update</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Update Menu will show user what he/ she can do to update menu.</p>
-</li>
-<li>
-<p>Menu is updated by adding, editing or deleting food items from menu list.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-item"><a class="link" href="#add-item">3.1.4. Add Item</a></h4>
-<div class="paragraph">
-<p>Add a new item to the menu and sorts the menu.<br>
-Format: add NAME p/PRICE [t/TAG]</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Adds the new food item into the menu list</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-add Cheese Fries p/3.50 t/New item<br>
-System adds Cheese Fries to the existing menu.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-item"><a class="link" href="#edit-item">3.1.5. Edit Item</a></h4>
-<div class="paragraph">
-<p>Edit an item on the menu<br>
-Format: edit INDEX [n/NAME] [p/PRICE] [t/TAG]</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Edits the name, price and tag of food item in that particular index (User able to edit either one or all three attributes of the particular food item)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-edit 3 Cheese Fries with bacon p/5.00 t/Limited Offer<br>
-System updates Cheese Fries, which is in index 3, to Cheese Fries with bacon and changes the price from $3.50 to $5.00</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-item"><a class="link" href="#delete-item">3.1.6. Delete Item</a></h4>
-<div class="paragraph">
-<p>Delete an item on the menu<br>
-Format: delete INDEX</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the food item in that particular index</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-view menu<br>
-delete 1<br>
-System deletes food item in index 1 from the menu.<br>
-find Cheese Fries<br>
-Delete 3<br>
-System deletes Cheese Fries in index 3 from the menu.</p>
 </div>
 </div>
 </div>
@@ -490,22 +517,19 @@ There is no need to save manually.</p>
 <div class="sect2">
 <h3 id="menu-2"><a class="link" href="#menu-2">5.1. Menu</a></h3>
 <div class="paragraph">
-<p><strong>View Menu</strong> : <code>view</code></p>
+<p><strong>View Menu</strong> : <code>viewmenu</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Find Menu</strong> : <code>find KEYWORD [MORE KEYWORDS]</code></p>
+<p><strong>Find Menu</strong> : <code>findmenu KEYWORD [MORE KEYWORDS]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Update Menu</strong> : <code>update</code></p>
+<p><strong>Add Item</strong> : <code>addmenu NAME p/PRICE [t/TAG]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Add Item</strong> : <code>add NAME p/PRICE [t/TAG]</code></p>
+<p><strong>Edit Item</strong> : <code>editmenu INDEX [n/NAME] [p/PRICE] [t/TAG]</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Edit Item</strong> : <code>edit INDEX [n/NAME] [p/PRICE] [t/TAG]</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Delete Item</strong> : <code>delete INDEX</code></p>
+<p><strong>Delete Item</strong> : <code>deletemenu INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -578,4 +602,4 @@ There is no need to save manually.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:31:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 12:09:10 UTC</div></div></div></body></html>
