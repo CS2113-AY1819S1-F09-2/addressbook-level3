@@ -12,7 +12,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 :warning-caption: :warning:
 endif::[]
-:repoURL: https://github.com/se-edu/addressbook-level4/tree/master
+:repoURL: https://github.com/CS2113-AY1819S1-F09-2/main/tree/master
 
 By: `CS2113-AY1819S1-F09-2`      Since: `Aug 2018`      Licence: `MIT`
 
@@ -219,7 +219,6 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 //
 //The `Storage` component,
 //
-//* can save `UserPref` objects in json format and read it back.
 //* can save the Address Book data in xml format and read it back.
 //
 //[[Design-Commons]]
