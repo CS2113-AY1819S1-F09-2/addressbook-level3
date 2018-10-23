@@ -210,22 +210,22 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 //image:ModelClassBetterOopDiagram.png[width="800"]
 //
 //[[Design-Storage]]
-//=== Storage component
-//
-//.Structure of the Storage Component
-//image::StorageClassDiagram.png[width="800"]
-//
-//*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
-//
-//The `Storage` component,
-//
-//* can save the Address Book data in xml format and read it back.
-//
-//[[Design-Commons]]
-//=== Common classes
-//
-//Classes used by multiple components are in the `seedu.addressbook.commons` package.
-//
+=== Storage component
+
+.Structure of the Storage Component
+image::StorageClassDiagram.png[width="800"]
+
+*API* : link:{repoURL}/src/seedu/addressbook/storage/StorageFile.java[`StorageFile.java`]
+
+The `Storage` component,
+
+* can save the Address Book data in xml format and read it back.
+
+[[Design-Commons]]
+=== Common classes
+
+Classes used by multiple components are in the `seedu.addressbook.commons` package.
+
 //== Implementation
 //
 //This section describes some noteworthy details on how certain features are implemented.
