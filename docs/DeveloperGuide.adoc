@@ -821,9 +821,11 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* *` |Cashier |view all members of the restaurant |keep track of which customer has a membership at the restaurant
 
-|`* * *` |Manager |keep track of the restaurant business statistics |understand if the restaurant is making a loss or not
+|`* * *` |Manager |keep track of the restaurant business statistics such as daily revenue |understand if the restaurant is making a loss or not
 
-|`* *` |Manager |keep track of which food item are sold the most |know which food item should remain on the menu
+|`* * *` |Manager |keep track of employees wages | know how much I have to pay or how much I have paid to restaurant employees
+
+|`* *` |Manager |keep track of which menu item are sold the most | know which food is the best seller
 
 |`* *` |Manager |add, edit and delete items from the menu |keep my restaurant menu interesting
 
