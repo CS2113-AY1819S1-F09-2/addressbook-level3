@@ -919,7 +919,49 @@ Use case ends.
 +
 Use case ends.
 
+[discrete]
+=== Use case: View employee statistics
+Actor: Manager
 
+*MSS*
+
+1.  User chooses to view the employee statistics
+2.  RMS shows overview employee statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View member statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the member statistics
+2.  RMS shows overview member statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View menu statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the menu statistics
+2.  RMS shows overview menu statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View order statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the order statistics
+2.  RMS shows overview order statistics
+
+Use case ends.
 
 _{More to be added}_
 
