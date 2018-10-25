@@ -14,10 +14,10 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#menu">3.1. Menu</a></li>
-<li><a href="#order">3.2. Order</a></li>
-<li><a href="#members">3.3. Members</a></li>
-<li><a href="#employees">3.4. Employees</a></li>
-<li><a href="#delete-employee">3.5. Delete Employee</a></li>
+<li><a href="#members">3.2. Members</a></li>
+<li><a href="#employees">3.3. Employees</a></li>
+<li><a href="#delete-employee">3.4. Delete Employee</a></li>
+<li><a href="#order">3.5. Order</a></li>
 <li><a href="#statistics">3.6. Statistics</a></li>
 <li><a href="#saving-the-data">3.7. Saving the data</a></li>
 </ul>
@@ -26,9 +26,9 @@
 <li><a href="#command-summary">5. Command Summary</a>
 <ul class="sectlevel2">
 <li><a href="#menu-2">5.1. Menu</a></li>
-<li><a href="#order-2">5.2. Order</a></li>
-<li><a href="#employees-2">5.3. Employees</a></li>
-<li><a href="#members-2">5.4. Members</a></li>
+<li><a href="#employees-2">5.2. Employees</a></li>
+<li><a href="#members-2">5.3. Members</a></li>
+<li><a href="#order-2">5.4. Order</a></li>
 <li><a href="#statistics-2">5.5. Statistics</a></li>
 </ul>
 </li>
@@ -91,7 +91,10 @@
 <p><strong><code>addmember</code></strong><code>n/John Doe p/98765432 e/johnd@example.com d/10182017</code> : adds a member named <code>John Doe</code> to the Restaurant Management System.</p>
 </li>
 <li>
-<p><strong><code>deleteorder</code></strong><code>3</code> : deletes the 3rd order shown in the current list</p>
+<p><strong><code>listorder</code></strong> : lists all orders in the order list.</p>
+</li>
+<li>
+<p><strong><code>deleteorder</code></strong><code>3</code> : deletes the 3rd order shown in the last shown order list</p>
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
@@ -250,129 +253,23 @@ Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries
 </div>
 </div>
 <div class="sect2">
-<h3 id="order"><a class="link" href="#order">3.2. Order</a></h3>
+<h3 id="members"><a class="link" href="#members">3.2. Members</a></h3>
 <div class="sect3">
-<h4 id="add-order"><a class="link" href="#add-order">3.2.1. Add Order</a></h4>
-<div class="paragraph">
-<p>To add new order to the order list, a draft must be completed before adding it to the order list.<br></p>
-</div>
-<div class="paragraph">
-<p>To do so, the draft&#8217;s customer information and order dishes list must be completed and then confirmed.</p>
-</div>
-<div class="sect4">
-<h5 id="display-list-of-commands-for-adding-new-order"><a class="link" href="#display-list-of-commands-for-adding-new-order">Display List Of Commands For Adding New Order</a></h5>
-<div class="paragraph">
-<p>Display the current draft and the list of order draft commands used for adding a new order</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>addorder</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="edit-the-customer-of-the-draft"><a class="link" href="#edit-the-customer-of-the-draft">Edit The Customer Of The Draft</a></h5>
-<div class="paragraph">
-<p>Edit the customer field of the draft order.<br></p>
-</div>
-<div class="paragraph">
-<p>The customer is retrieved with the index of last displayed member list.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>editdraftcustomer INDEX</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="edit-a-dish-item-of-the-draft"><a class="link" href="#edit-a-dish-item-of-the-draft">Edit A Dish Item Of The Draft</a></h5>
-<div class="paragraph">
-<p>Edit the quantity of a dish item of the draft order.<br></p>
-</div>
-<div class="paragraph">
-<p>The dish item is retrieved with the index of last displayed menu.<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If the quantity is set to 0, then the dish will be removed for the order.<br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Format: <code>editdraftdish i/INDEX q/QUANTITY</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="clear-draft"><a class="link" href="#clear-draft">Clear Draft</a></h5>
-<div class="paragraph">
-<p>Clear the draft order, which include both customer and dishList of the class;<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>cleardraft</code></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="confirmdraft"><a class="link" href="#confirmdraft">ConfirmDraft</a></h5>
-<div class="paragraph">
-<p>Confirm the draft and add it to the order list</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>confirmdraft</code></p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-order"><a class="link" href="#delete-order">3.2.2. Delete Order</a></h4>
-<div class="paragraph">
-<p>Delete an order.<br></p>
-</div>
-<div class="paragraph">
-<p>The deleted order is specified by the index of that order on the last displayed order list.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteorder INDEX</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="clear-order"><a class="link" href="#clear-order">3.2.3. Clear Order</a></h4>
-<div class="paragraph">
-<p>Clear the entire order list.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>clearorder</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-orders"><a class="link" href="#list-orders">3.2.4. List Orders</a></h4>
-<div class="paragraph">
-<p>Shows a list of all the current orders.<br></p>
-</div>
-<div class="paragraph">
-<p>Each order include details of: customer, ordered time, total price and the list of dish items and quantities ordered<br></p>
-</div>
-<div class="paragraph">
-<p>Only the non-private data of customer will be showed.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>listorder</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="members"><a class="link" href="#members">3.3. Members</a></h3>
-<div class="sect3">
-<h4 id="add-member"><a class="link" href="#add-member">3.3.1. Add Member</a></h4>
+<h4 id="add-member"><a class="link" href="#add-member">3.2.1. Add Member</a></h4>
 <div class="paragraph">
 <p>Add a new member to the RMS<br>
 Format: addmember NAME</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-member"><a class="link" href="#list-member">3.3.2. List Member</a></h4>
+<h4 id="list-member"><a class="link" href="#list-member">3.2.2. List Member</a></h4>
 <div class="paragraph">
 <p>Shows a list of all the members in the RMS. Displays the NAME and POINTS of each member.<br>
 Format: listmembers</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-member"><a class="link" href="#edit-member">3.3.3. Edit Member</a></h4>
+<h4 id="edit-member"><a class="link" href="#edit-member">3.2.3. Edit Member</a></h4>
 <div class="paragraph">
 <p>Edit membership details of a member in the RMS<br>
 Format: edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</p>
@@ -386,7 +283,7 @@ Format: delete NAME</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-member"><a class="link" href="#find-member">3.3.4. Find Member</a></h4>
+<h4 id="find-member"><a class="link" href="#find-member">3.2.4. Find Member</a></h4>
 <div class="paragraph">
 <p>Find membership details of a member in the RMS<br>
 Format: find NAME</p>
@@ -394,16 +291,16 @@ Format: find NAME</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="employees"><a class="link" href="#employees">3.4. Employees</a></h3>
+<h3 id="employees"><a class="link" href="#employees">3.3. Employees</a></h3>
 <div class="sect3">
-<h4 id="view-employees"><a class="link" href="#view-employees">3.4.1. View Employees</a></h4>
+<h4 id="view-employees"><a class="link" href="#view-employees">3.3.1. View Employees</a></h4>
 <div class="paragraph">
 <p>Show a list of all the employees on the RMS.<br>
 Format: <code>listemp</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-employee"><a class="link" href="#add-employee">3.4.2. Add Employee</a></h4>
+<h4 id="add-employee"><a class="link" href="#add-employee">3.3.2. Add Employee</a></h4>
 <div class="paragraph">
 <p>Adds a new employee to the RMS.<br>
 Format: <code>addemp n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS pos/POSITION</code></p>
@@ -414,7 +311,7 @@ Format: <code>addemp n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS pos/POSITION</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-employee"><a class="link" href="#edit-employee">3.4.3. Edit Employee</a></h4>
+<h4 id="edit-employee"><a class="link" href="#edit-employee">3.3.3. Edit Employee</a></h4>
 <div class="paragraph">
 <p>Edit details of an employee.<br>
 Format: <code>editemp INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [pos/POSITION]</code></p>
@@ -446,7 +343,7 @@ Edits the value of Joe Bob to Cashier</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="delete-employee"><a class="link" href="#delete-employee">3.5. Delete Employee</a></h3>
+<h3 id="delete-employee"><a class="link" href="#delete-employee">3.4. Delete Employee</a></h3>
 <div class="paragraph">
 <p>Delete and employee.<br>
 Format: delemp INDEX</p>
@@ -479,7 +376,7 @@ Deletes the 1st employee in the employee list.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="calculate-wages"><a class="link" href="#calculate-wages">3.5.1. Calculate Wages</a></h4>
+<h4 id="calculate-wages"><a class="link" href="#calculate-wages">3.4.1. Calculate Wages</a></h4>
 <div class="paragraph">
 <p>Calculates the wage of an employee.<br>
 <code>Format calcwage NAME</code></p>
@@ -487,6 +384,130 @@ Deletes the 1st employee in the employee list.</p>
 <div class="paragraph">
 <p>Examples:<br>
 <code>calcwage Joe Bob</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="order"><a class="link" href="#order">3.5. Order</a></h3>
+<div class="sect3">
+<h4 id="add-order"><a class="link" href="#add-order">3.5.1. Add Order</a></h4>
+<div class="paragraph">
+<p>To add new order to the order list, a draft must be completed before adding it to the order list.<br></p>
+</div>
+<div class="paragraph">
+<p>To do so, dishes must be added into the draft, and then it can be added into the order list after
+the draft is confirmed.</p>
+</div>
+<div class="paragraph">
+<p>Registered customer of the member list can be added into the order draft to accumulate member points
+once the order is confirmed.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Display Draft And List Of Commands For Adding</strong><br></p>
+<div class="paragraph">
+<p>Display the current draft and the list of order draft commands used for adding a new order<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>addorder</code></p>
+</div>
+</li>
+<li>
+<p><strong>Pick A Member As The Customer Of The Draft</strong><br></p>
+<div class="paragraph">
+<p>Select a member from the last shown member list to be the customer of the draft order.<br></p>
+</div>
+<div class="paragraph">
+<p>The customer is retrieved with the index of last displayed member list.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>draftcustomer INDEX</code></p>
+</div>
+</li>
+<li>
+<p><strong>Edit A Dish Item Of The Draft</strong><br></p>
+<div class="paragraph">
+<p>By picking a dish from the last shown menu and state the quantity to be added,
+a dish item can be added, deleted or edited in the draft order.<br></p>
+</div>
+<div class="paragraph">
+<p>The dish item is retrieved with the index of last displayed menu.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the quantity is set to 0, then the dish will be removed from the draft.<br></p>
+</li>
+<li>
+<p>If the quantity of a dish that is currently not in the draft is set to a
+positive integer, then the dish and its quantity will be added into the draft.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>draftdish INDEX q/QUANTITY</code></p>
+</div>
+</li>
+<li>
+<p><strong>Clear Draft</strong><br></p>
+<div class="paragraph">
+<p>Clear all details of the draft order.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>cleardraft</code></p>
+</div>
+</li>
+<li>
+<p><strong>ConfirmDraft</strong><br></p>
+<div class="paragraph">
+<p>Confirm the draft and add it to the order list.<br></p>
+</div>
+<div class="paragraph">
+<p>Once it is confirmed, the ordered dish items in the
+newly added order can no longer be changed.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>confirmdraft</code></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-order"><a class="link" href="#delete-order">3.5.2. Delete Order</a></h4>
+<div class="paragraph">
+<p>Delete an order.<br></p>
+</div>
+<div class="paragraph">
+<p>The deleted order is specified by the index of that order on the last displayed order list.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteorder INDEX</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clear-order"><a class="link" href="#clear-order">3.5.3. Clear Order</a></h4>
+<div class="paragraph">
+<p>Clear the entire order list.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>clearorder</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-orders"><a class="link" href="#list-orders">3.5.4. List Orders</a></h4>
+<div class="paragraph">
+<p>Shows a list of all the current orders.<br></p>
+</div>
+<div class="paragraph">
+<p>Each order include details of: customer, ordered time, total price and the list of dish items and quantities ordered<br></p>
+</div>
+<div class="paragraph">
+<p>Only the non-private data of customer will be showed.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listorder</code></p>
 </div>
 </div>
 </div>
@@ -547,34 +568,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="order-2"><a class="link" href="#order-2">5.2. Order</a></h3>
-<div class="paragraph">
-<p><strong>Delete Order</strong> : <code>deleteorder INDEX</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Clear Order</strong> : <code>clearorder</code></p>
-</div>
-<div class="paragraph">
-<p><strong>List All Order</strong> : <code>listorder</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Display Add Order Commands</strong>: <code>addOrder</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Change Draft Customer</strong>: <code>editdraftcustomer INDEX</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Edit Dishes In Draft Order</strong>: <code>editdraftdish i/INDEX q/QUANTITY</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Clear The Customer Draft</strong>: <code>cleardraft</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Confirm And Add Order</strong>: <code>confirmdraft</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="employees-2"><a class="link" href="#employees-2">5.3. Employees</a></h3>
+<h3 id="employees-2"><a class="link" href="#employees-2">5.2. Employees</a></h3>
 <div class="paragraph">
 <p><strong>View Employees</strong> : <code>add n/NAME p/PHONE_NUMBER pos/POSITION</code></p>
 </div>
@@ -592,7 +586,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="members-2"><a class="link" href="#members-2">5.4. Members</a></h3>
+<h3 id="members-2"><a class="link" href="#members-2">5.3. Members</a></h3>
 <div class="paragraph">
 <p><strong>Add Member</strong> : <code>addmember NAME</code></p>
 </div>
@@ -610,6 +604,47 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="order-2"><a class="link" href="#order-2">5.4. Order</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add Order:</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Display Add Order Commands</strong>: <code>addorder</code></p>
+</li>
+<li>
+<p><strong>Select Member As Customer Of The Draft</strong>: <code>draftcustomer INDEX</code><br>
+e.g. <code>draftcustomer 2</code></p>
+</li>
+<li>
+<p><strong>Edit Dishes In The Draft</strong>: <code>draftdish INDEX q/QUANTITY</code><br>
+e.g. <code>draftdish 4 q/1</code></p>
+</li>
+<li>
+<p><strong>Clear The Draft</strong>: <code>cleardraft</code></p>
+</li>
+<li>
+<p><strong>Confirm Draft</strong>: <code>confirmdraft</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Delete Order</strong> : <code>deleteorder INDEX</code><br>
+e.g. <code>deleteorder 3</code></p>
+</li>
+<li>
+<p><strong>Clear Order List</strong> : <code>clearorder</code></p>
+</li>
+<li>
+<p><strong>List All Orders</strong> : <code>listorder</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="statistics-2"><a class="link" href="#statistics-2">5.5. Statistics</a></h3>
 <div class="paragraph">
 <p><strong>View Order Statistics</strong> : <code>vieworderstats</code></p>
@@ -619,4 +654,4 @@ There is no need to save manually.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 17:05:02 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 17:26:05 UTC</div></div></div></body></html>
