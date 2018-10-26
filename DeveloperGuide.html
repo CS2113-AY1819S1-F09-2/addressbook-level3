@@ -481,8 +481,14 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view employees</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know which one of my employees are working today</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list employees</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to view the details of the employees working in the restaurant</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add, edit and delete employees from the system</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to manage information of the employees working in the restaurant</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -507,7 +513,7 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix B: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>Restaurant Management System</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>Restaurant Management System (RMS)</code>, unless specified otherwise)</p>
 </div>
 <h3 id="use-case-taking-a-customer-s-orders" class="discrete">Use case: Taking a Customer’s Orders</h3>
 <div class="paragraph">
@@ -671,6 +677,236 @@ in the order so that bonus points can be accumulated when the order is confirmed
 </li>
 </ul>
 </div>
+<h3 id="use-case-list-employees" class="discrete">Use case: List employees</h3>
+<div class="paragraph">
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: List employees<br>
+Actor: Restaurant Manager<br>
+Preconditions: User has started up the system.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List of employees will be displayed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list employees.</p>
+</li>
+<li>
+<p>RMS displays a list of the employees.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that there are currently no employees recorded.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS shows a message that says there are currently no employees recorded.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-add-employee" class="discrete">Use case: Add employee</h3>
+<div class="paragraph">
+<p>Actor: Restaurant Manager<br>
+Preconditions: "List employee" use case was used before this use case.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New employee is added to the RMS.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new employee with the required parameters.</p>
+</li>
+<li>
+<p>RMS adds a new employee to the list with the parameters that were specified by the User.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that an invalid command format has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS displays an error that says the command format is invalid.</p>
+</li>
+<li>
+<p>1a2. RMS displays information on the proper use of the command along with an example.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. RMS detects that there is an attempt to add a duplicate employee.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. RMS displays an error that says the employee already exists in Rms.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-employee" class="discrete">Use case: Delete employee</h3>
+<div class="paragraph">
+<p>Actor: Restaurant Manager<br>
+Preconditions: "List employee" use case was used before this use case.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The specified employee will be deleted from the RMS.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete an employee by using the index as shown on the list of employees.</p>
+</li>
+<li>
+<p>RMS deletes an employee using the specified index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that an invalid index has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS displays an error that says the index provided is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-employee" class="discrete">Use case: Edit employee</h3>
+<div class="paragraph">
+<p>Actor: Restaurant Manager<br>
+Preconditions: "List employee" use case was used before this use case.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Details of an employee is edited.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit an existing employee at the specified index with the optional parameters provided.</p>
+</li>
+<li>
+<p>RMS edits the employee at the specified index with the optional parameters that were provided.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that an invalid command format has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS displays an error that says the command format is invalid.</p>
+</li>
+<li>
+<p>1a2. RMS displays information on the proper use of the command along with an example.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. RMS detects that an invalid index has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. RMS displays an error that says the index provided is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
 </div>
@@ -696,4 +932,4 @@ in the order so that bonus points can be accumulated when the order is confirmed
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-26 02:01:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-26 12:28:30 UTC</div></div></div></body></html>
