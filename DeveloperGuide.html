@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Restaurant Managment System - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Restaurant Management System - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Restaurant Managment System - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Restaurant Management System - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>CS2113-AY1819S1-F09-2</code>      Since: <code>Aug 2018</code>      Licence: <code>MIT</code></p>
@@ -21,18 +21,27 @@
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Logic">3.2. Logic component</a></li>
 </ul>
 </li>
-<li><a href="#Testing">4. Testing</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#running-tests">4.1. Running Tests</a></li>
-<li><a href="#types-of-tests">4.2. Types of tests</a></li>
-<li><a href="#troubleshooting-testing">4.3. Troubleshooting Testing</a></li>
+<li><a href="#adding-a-new-order">4.1. Adding a new order</a></li>
+<li><a href="#saving-and-loading-the-order-list">4.2. Saving and Loading the order list</a></li>
+<li><a href="#proposed-program-state-control">4.3. [Proposed] Program State Control</a></li>
 </ul>
 </li>
-<li><a href="#user-stories">Appendix A: User Stories</a></li>
-<li><a href="#use-cases">Appendix B: Use Cases</a></li>
-<li><a href="#non-functional-requirements">Appendix C: Non Functional Requirements</a></li>
+<li><a href="#Testing">5. Testing</a>
+<ul class="sectlevel2">
+<li><a href="#running-tests">5.1. Running Tests</a></li>
+<li><a href="#types-of-tests">5.2. Types of tests</a></li>
+<li><a href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></li>
+</ul>
+</li>
+<li><a href="#product-scope">Appendix A: Product Scope</a></li>
+<li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 </ul>
 </div>
 </div>
@@ -160,10 +169,10 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/se-edu/addressbook-level4/tree/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
+<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="https://github.com/CS2113-AY1819S1-F09-2/main/blob/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
 </li>
 <li>
-<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/se-edu/addressbook-level4/tree/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/se-edu/addressbook-level4/tree/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
+<p>Replace the URL in the attribute <code>repoURL</code> in <a href="https://github.com/CS2113-AY1819S1-F09-2/main/blob/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="https://github.com/CS2113-AY1819S1-F09-2/main/blob/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
 </li>
 </ol>
 </div>
@@ -286,13 +295,118 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <p>Below contains the description for each of the four key components:</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.2. Logic component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
+</div>
+<div class="title">Figure 2. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/blob/master/src/seedu/addressbook/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>Parser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by <code>Logic</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a new member) and/or raise events.</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Each of the <code>CommandResult</code> class is used as a specific constructor to correctly handle the class of the returned list
+of result.<br>
+e.g. <code>OrderCommandResult</code> constructs a <code>CommandResult</code> object that only contains a result message and a list of orders
+generated from the ordering commands.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Testing"><a class="link" href="#Testing">4. Testing</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes some noteworthy details on how certain features are implemented.</p>
+</div>
+<div class="sect2">
+<h3 id="adding-a-new-order"><a class="link" href="#adding-a-new-order">4.1. Adding a new order</a></h3>
+<div class="paragraph">
+<p>To avoid writing a long command line when ordering a long list of dishes, a draft ordering system is implemented.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When the ordering draft is initialized or cleared, the member <code>draftOrder</code> in <code>Rms.txt</code> is loaded with a new object
+of class <code>Order</code>. It is initialize with an empty list of dish and a pseudo-empty customer field that is not <code>null</code>.</p>
+</li>
+<li>
+<p>By using the draft order command classes, the ordering draft can be edited (e.g. picking the customer from the member
+list if they present their membership card, pick the dish from the menu list one by one before confirming the order).</p>
+</li>
+<li>
+<p>Once an order is confirmed, the ordering time is recorded and the total price is calculated to create a new <code>Order</code>
+object that has the same customer and list of dishes fields as the ordering draft to be added to the order list, and
+the ordering draft is cleared afterward.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-and-loading-the-order-list"><a class="link" href="#saving-and-loading-the-order-list">4.2. Saving and Loading the order list</a></h3>
+<div class="paragraph">
+<p>The order list is saved by using an adaptive class that convert the existing data in the objects to a jaxb-friendly
+class. This means that the order list stores every information of the owner of an order.</p>
+</div>
+<div class="paragraph">
+<p>However, the loading the order list cannot be implemented by creating a list of new <code>Order</code> objects that contains a new
+<code>Member</code> object in its customer field based on the data stored in the storage file. This is because the created
+customer object are not the same object as the original <code>Member</code> object in the member list, so any changes made to the
+member list will not get reflected in the order (e.g. not showing the changes of address or phone number if these
+fields are to be recorded to the membership database).</p>
+</div>
+<div class="paragraph">
+<p>To solve this problem, the order list will retrieve the correct object in the loaded member list at the start of the
+program using the method <code>retrieveMember()</code> in <code>AdaptedOrder.java</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-program-state-control"><a class="link" href="#proposed-program-state-control">4.3. [Proposed] Program State Control</a></h3>
+<div class="paragraph">
+<p>As there is multiple functionality in the program, it is proposed that a program state control functionality should be
+implemented to assist the user navigate through the program. The command keywords can be simplified and the help
+message can be specifically wrote in each states to reduce the burdens of remembering very long line of commands.</p>
+</div>
+<div class="paragraph">
+<p>This can be done by introducing a status variable in the <code>Logic</code> module, creating command to change the state variable
+and adjusting the returning command in the <code>Parser</code> based on that variable.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Testing"><a class="link" href="#Testing">5. Testing</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">4.1. Running Tests</a></h3>
+<h3 id="running-tests"><a class="link" href="#running-tests">5.1. Running Tests</a></h3>
 <div class="paragraph">
 <p>There are three ways to run tests.</p>
 </div>
@@ -354,7 +468,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 </div>
 </div>
 <div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">4.2. Types of tests</a></h3>
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">5.2. Types of tests</a></h3>
 <div class="paragraph">
 <p>We have 1 type of test:</p>
 </div>
@@ -383,7 +497,7 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">4.3. Troubleshooting Testing</a></h3>
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">5.3. Troubleshooting Testing</a></h3>
 <div class="paragraph">
 <p><strong>Problem: <code>HelpWindowTest</code> fails with a <code>NullPointerException</code>.</strong></p>
 </div>
@@ -393,11 +507,16 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 <p>Reason: One of its dependencies, <code>HelpWindow.html</code> in <code>src/main/resources/docs</code> is missing.</p>
 </li>
 <li>
-<p>Solution: Execute Gradle task <code>processResources</code>.
-== Product Scope</p>
+<p>Solution: Execute Gradle task <code>processResources</code>.</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="product-scope"><a class="link" href="#product-scope">Appendix A: Product Scope</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Target user profile</strong>:</p>
 </div>
@@ -425,9 +544,8 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
@@ -510,7 +628,7 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix B: Use Cases</a></h2>
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Restaurant Management System (RMS)</code>, unless specified otherwise)</p>
@@ -913,7 +1031,7 @@ Guarantees:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix C: Non Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -932,4 +1050,4 @@ Guarantees:</p>
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 03:33:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 07:03:49 UTC</div></div></div></body></html>
