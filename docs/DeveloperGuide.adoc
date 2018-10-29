@@ -12,7 +12,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 :warning-caption: :warning:
 endif::[]
-:repoURL: https://github.com/se-edu/addressbook-level4/tree/master
+:repoURL: https://github.com/CS2113-AY1819S1-F09-2/main/tree/master
 
 By: `CS2113-AY1819S1-F09-2`      Since: `Aug 2018`      Licence: `MIT`
 
@@ -210,23 +210,22 @@ Below contains the description for each of the four key components:
 //image:ModelClassBetterOopDiagram.png[width="800"]
 //
 //[[Design-Storage]]
-//=== Storage component
-//
-//.Structure of the Storage Component
-//image::StorageClassDiagram.png[width="800"]
-//
-//*API* : link:{repoURL}/src/main/java/seedu/address/storage/Storage.java[`Storage.java`]
-//
-//The `Storage` component,
-//
-//* can save `UserPref` objects in json format and read it back.
-//* can save the Address Book data in xml format and read it back.
-//
-//[[Design-Commons]]
-//=== Common classes
-//
-//Classes used by multiple components are in the `seedu.addressbook.commons` package.
-//
+=== Storage component
+
+.Structure of the Storage Component
+image::StorageClassDiagram.png[width="800"]
+
+*API* : link:{repoURL}/src/seedu/addressbook/storage/StorageFile.java[`StorageFile.java`]
+
+The `Storage` component,
+
+* can save the Address Book data in xml format and read it back.
+
+[[Design-Commons]]
+=== Common classes
+
+Classes used by multiple components are in the `seedu.addressbook.commons` package.
+
 //== Implementation
 //
 //This section describes some noteworthy details on how certain features are implemented.
@@ -822,9 +821,11 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 
 |`* *` |Cashier |view all members of the restaurant |keep track of which customer has a membership at the restaurant
 
-|`* * *` |Manager |keep track of the restaurant business statistics |understand if the restaurant is making a loss or not
+|`* * *` |Manager |keep track of the restaurant business statistics such as daily revenue |understand if the restaurant is making a loss or not
 
-|`* *` |Manager |keep track of which food item are sold the most |know which food item should remain on the menu
+|`* * *` |Manager |keep track of employees wages | know how much I have to pay or how much I have paid to restaurant employees
+
+|`* *` |Manager |keep track of which menu item are sold the most | know which food is the best seller
 
 |`* *` |Manager |add, edit and delete items from the menu |keep my restaurant menu interesting
 
@@ -850,11 +851,11 @@ Actor: Manager and Cashier
 *MSS*
 
 1.  User chooses to view the menu list
-2.  FMS shows the list of items in the menu
+2.  RMS shows the list of items in the menu
 3.  User informs the menu item and the quantity they wish to order
-4.  FMS put that item and its quantity in the order
+4.  RMS put that item and its quantity in the order
 5.  Repeat step 1 to 4 until user confirm the order
-6.  FMS acknowledge the order and add it to the system
+6.  RMS acknowledge the order and add it to the system
 +
 Use case ends.
 
@@ -872,8 +873,7 @@ Return to step 1.
 [none]
 ** 2a1. User enters the find command and searches for the item customer is looking for
 +
-2a2. FMS returns the list of items searched by the command the user entered
-
+2a2. RMS returns the list of items searched by the command the user entered
 +
 Return to step 3.
 
@@ -884,7 +884,7 @@ Actor: Manager
 *MSS*
 
 1.  User enters the command to update menu
-2.  FMS displays a message telling user the (three) ways he/she can update the menu
+2.  RMS displays a message telling user the (three) ways he/she can update the menu
 3.  User wishes to edit an existing item in the menu
 4.  User enters index of the item that should be updated and edits the details
 5.  System updates that item in that particular index of the menu list
@@ -899,33 +899,75 @@ Use case ends.
 [none]
 ** 3a1. User chooses to view the menu list
 +
-3a2. FMS displays the existing menu list
+3a2. RMS displays the existing menu list
 +
 3a3. User looks for the INDEX of the particular item to be deleted and deletes the item
 +
-3a4. FMS deletes the food item from the existing list
+3a4. RMS deletes the food item from the existing list
 +
 Use case ends.
 * 3b. User wishes to delete an item from the menu
 [none]
 ** 3b1. User searches for the menu item to be deleted
 +
-3b2. FMS shows the list of items with that menu name
+3b2. RMS shows the list of items with that menu name
 +
 3b3. User looks for the INDEX of the particular item to be deleted and deletes the item
 +
-3b4. FMS deletes the food item from the existing list
+3b4. RMS deletes the food item from the existing list
 +
 Use case ends.
 * 3c. User wishes to add new item to the menu
 [none]
 ** 3c1. User enters the new item into the menu
 +
-3c2. FMS adds the entered menu to the existing menu list
+3c2. RMS adds the entered menu to the existing menu list
 +
 Use case ends.
 
+[discrete]
+=== Use case: View employee statistics
+Actor: Manager
 
+*MSS*
+
+1.  User chooses to view the employee statistics
+2.  RMS shows overview employee statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View member statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the member statistics
+2.  RMS shows overview member statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View menu statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the menu statistics
+2.  RMS shows overview menu statistics
+
+Use case ends.
+
+[discrete]
+=== Use case: View order statistics
+Actor: Manager
+
+*MSS*
+
+1.  User chooses to view the order statistics
+2.  RMS shows overview order statistics
+
+Use case ends.
 
 _{More to be added}_
 
