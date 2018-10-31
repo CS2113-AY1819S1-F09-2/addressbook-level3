@@ -21,8 +21,9 @@
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Logic">3.2. Logic component</a></li>
-<li><a href="#storage-component">3.3. Storage component</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#storage-component">3.4. Storage component</a></li>
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
@@ -302,12 +303,38 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.2. Logic component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/UiComponentClassDiagram.png" alt="UiComponentClassDiagram" width="800">
+</div>
+<div class="title">Figure 2. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p>The UI consists of <code>Main</code> that implements <code>Stoppable</code> and extends <code>Application</code>. <code>Main</code> is also dependant on <code>Gui</code> which is dependant on <code>MainWindow</code>.
+Furthermore, <code>Gui</code> and <code>MainWindow</code> are both dependant on <code>Logic</code>.</p>
+</div>
+<div class="paragraph">
+<p>The components use JavaFx UI framework.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Main</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Executes user commands using the <code>Gui</code> component which relies on the <code>Logic</code> component.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
-<div class="title">Figure 2. Structure of the Logic Component</div>
+<div class="title">Figure 3. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -346,12 +373,12 @@ generated from the ordering commands.
 </div>
 </div>
 <div class="sect2">
-<h3 id="storage-component"><a class="link" href="#storage-component">3.3. Storage component</a></h3>
+<h3 id="storage-component"><a class="link" href="#storage-component">3.4. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 3. Structure of the Storage Component</div>
+<div class="title">Figure 4. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-F09-2/main/tree/master/src/seedu/addressbook/storage/StorageFile.java"><code>StorageFile.java</code></a></p>
@@ -1275,4 +1302,4 @@ Guarantees:</p>
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 16:49:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 08:50:35 UTC</div></div></div></body></html>
