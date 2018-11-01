@@ -14,7 +14,7 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#menu">3.1. Menu</a></li>
-<li><a href="#members">3.2. Members</a></li>
+<li><a href="#MemberCommands">3.2. Members</a></li>
 <li><a href="#employees">3.3. Employees</a></li>
 <li><a href="#order">3.4. Order</a></li>
 <li><a href="#statistics">3.5. Statistics</a></li>
@@ -26,7 +26,7 @@
 <ul class="sectlevel2">
 <li><a href="#menu-2">5.1. Menu</a></li>
 <li><a href="#employees-2">5.2. Employees</a></li>
-<li><a href="#members-2">5.3. Members</a></li>
+<li><a href="#members">5.3. Members</a></li>
 <li><a href="#order-2">5.4. Order</a></li>
 <li><a href="#statistics-2">5.5. Statistics</a></li>
 </ul>
@@ -280,40 +280,31 @@ Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries
 </div>
 </div>
 <div class="sect2">
-<h3 id="members"><a class="link" href="#members">3.2. Members</a></h3>
+<h3 id="MemberCommands"><a class="link" href="#MemberCommands">3.2. Members</a></h3>
 <div class="sect3">
 <h4 id="add-member"><a class="link" href="#add-member">3.2.1. Add Member</a></h4>
 <div class="paragraph">
 <p>Add a new member to the RMS<br>
-Format: addmember NAME</p>
+Format: <code>addmember</code> NAME</p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>addmember kang ming</code><br>
+Returns: New member added: kangming Points: 0 Date: Wed Oct 31 20:30:50 SRET 2018 Tier: Bronze</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="list-member"><a class="link" href="#list-member">3.2.2. List Member</a></h4>
 <div class="paragraph">
-<p>Shows a list of all the members in the RMS. Displays the NAME and POINTS of each member.<br>
-Format: listmembers</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit-member"><a class="link" href="#edit-member">3.2.3. Edit Member</a></h4>
-<div class="paragraph">
-<p>Edit membership details of a member in the RMS<br>
-Format: edit NAME [p/PHONE_NUMBER] [e/EMAIL_ADDRESS][d/DATE_JOINED][pt/POINTS]</p>
+<p>Shows a list of all the members in the RMS. Displays the NAME, POINTS, DATE JOINED, MEMBERSHIP TIER of each member.<br>
+Format: <code>listmembers</code></p>
 </div>
 <div class="sect4">
 <h5 id="delete-member"><a class="link" href="#delete-member">Delete Member</a></h5>
 <div class="paragraph">
 <p>Delete membership details of a member in the RMS<br>
-Format: delete NAME</p>
+Format: <code>delmember INDEX</code></p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="find-member"><a class="link" href="#find-member">3.2.4. Find Member</a></h4>
-<div class="paragraph">
-<p>Find membership details of a member in the RMS<br>
-Format: find NAME</p>
 </div>
 </div>
 </div>
@@ -705,7 +696,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="members-2"><a class="link" href="#members-2">5.3. Members</a></h3>
+<h3 id="members"><a class="link" href="#members">5.3. Members</a></h3>
 <div class="paragraph">
 <p><strong>Add Member</strong> : <code>addmember NAME</code></p>
 </div>
@@ -716,7 +707,7 @@ There is no need to save manually.</p>
 <p><strong>Edit Member</strong> : <code>editmember NAME</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Delete Member</strong> : <code>deletemember NAME</code></p>
+<p><strong>Delete Member</strong> : <code>delmember INDEX</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Find Member</strong> : <code>findmember NAME</code></p>
@@ -779,4 +770,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 08:31:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 08:43:51 UTC</div></div></div></body></html>
