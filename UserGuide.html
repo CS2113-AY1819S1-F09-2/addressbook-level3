@@ -480,10 +480,14 @@ once the order is confirmed.</p>
 <p>Select a member from the last shown member list to be the customer of the draft order.<br></p>
 </div>
 <div class="paragraph">
-<p>The customer is retrieved with the index of last displayed member list.<br></p>
-</div>
-<div class="paragraph">
 <p>Format: <code>draftcustomer INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the last shown member list.</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -492,22 +496,30 @@ once the order is confirmed.</p>
 <p>By picking a dish from the last shown menu and state the quantity to be added,
 a dish item can be added, deleted or edited in the draft order.<br></p>
 </div>
-<div class="paragraph">
-<p>The dish item is retrieved with the index of last displayed menu.<br></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>If the quantity is set to 0, then the dish will be removed from the draft.<br></p>
+<p>If the quantity is set to 0, then the dish will be removed from the draft.</p>
 </li>
 <li>
 <p>If the quantity of a dish that is currently not in the draft is set to a
 positive integer, then the dish and its quantity will be added into the draft.</p>
 </li>
+<li>
+<p>If the quantity of a dish that is currently in the draft is set to a positive
+integer, then its quantity will be adjusted to the new value.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Format: <code>draftdish INDEX q/QUANTITY</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the last shown menu list.</p>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -545,6 +557,13 @@ newly added order can no longer be changed.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>deleteorder INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the last shown order list.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -775,4 +794,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 17:24:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 17:47:06 UTC</div></div></div></body></html>
