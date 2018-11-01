@@ -23,7 +23,8 @@
 <li><a href="#Design-Architecture">3.1. Architecture</a></li>
 <li><a href="#Design-Ui">3.2. UI component</a></li>
 <li><a href="#Design-Logic">3.3. Logic component</a></li>
-<li><a href="#storage-component">3.4. Storage component</a></li>
+<li><a href="#Design-Data">3.4. Data component</a></li>
+<li><a href="#storage-component">3.5. Storage component</a></li>
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
@@ -373,12 +374,47 @@ generated from the ordering commands.
 </div>
 </div>
 <div class="sect2">
-<h3 id="storage-component"><a class="link" href="#storage-component">3.4. Storage component</a></h3>
+<h3 id="Design-Data"><a class="link" href="#Design-Data">3.4. Data component</a></h3>
+<div id="fig-DataComponent" class="imageblock">
+<div class="content">
+<img src="images/DataComponent.png" alt="DataComponent" width="800">
+</div>
+<div class="title">Figure 4. Structure of the Data Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/tree/master/src/seedu/addressbook/data"><code>data</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The Data stores the RMS data</p>
+</li>
+<li>
+<p>It does not depend on any of the other components</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As a more OOP model, we can store a Tag list in RMS, which all the relevant features can reference. This would allow RMS to only require one Tag object per unique Tag, instead of each feature needing their own Tag object.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="storage-component"><a class="link" href="#storage-component">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="800">
 </div>
-<div class="title">Figure 4. Structure of the Storage Component</div>
+<div class="title">Figure 5. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2113-AY1819S1-F09-2/main/tree/master/src/seedu/addressbook/storage/StorageFile.java"><code>StorageFile.java</code></a></p>
@@ -635,6 +671,12 @@ e.g. <code>seedu.addressbook.logic.LogicTest</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all existing menu items of the restaurant</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know which item the customer wants when taking an order</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the restaurant business statistics such as daily revenue</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">understand if the restaurant is making a loss or not</p></td>
@@ -766,9 +808,11 @@ in the order so that bonus points can be accumulated when the order is confirmed
 </li>
 </ul>
 </div>
-<h3 id="use-case-update-menu" class="discrete">Use case: Update Menu</h3>
+<h3 id="use-case-show-main-menu" class="discrete">Use case: Show Main Menu</h3>
 <div class="paragraph">
-<p>Actor: Manager</p>
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: Show Main Menu<br>
+Actor: Manager, Cashier</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -776,19 +820,41 @@ in the order so that bonus points can be accumulated when the order is confirmed
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User enters the command to update menu</p>
+<p>User chooses to view the Main Menu to see the categories of menu item available.</p>
 </li>
 <li>
-<p>FMS displays a message telling user the (three) ways he/she can update the menu</p>
+<p>RMS shows Main Menu of the restaurant.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<h3 id="use-case-list-menu-based-on-category" class="discrete">Use case: List Menu Based On Category</h3>
+<div class="paragraph">
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: List employees<br>
+Actor: Manager, Cashier<br>
+Preconditions: User executes the Show Main Menu use case to know the existing menu categories.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List of menu items of a particular category will be displayed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list menu items of a particular category.</p>
 </li>
 <li>
-<p>User wishes to edit an existing item in the menu</p>
-</li>
-<li>
-<p>User enters index of the item that should be updated and edits the details</p>
-</li>
-<li>
-<p>System updates that item in that particular index of the menu list</p>
+<p>RMS displays a list of the menu items of that category.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -798,61 +864,14 @@ in the order so that bonus points can be accumulated when the order is confirmed
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>3a. User wishes to delete an item by viewing the existing menu list</p>
-<div class="ulist none">
-<ul class="none">
+<p>1a. RMS detects that an invalid type has been entered.</p>
+<div class="ulist">
+<ul>
 <li>
-<p>3a1. User chooses to view the menu list</p>
-<div class="paragraph">
-<p>3a2. FMS displays the existing menu list</p>
-</div>
-<div class="paragraph">
-<p>3a3. User looks for the INDEX of the particular item to be deleted and deletes the item</p>
-</div>
-<div class="paragraph">
-<p>3a4. FMS deletes the food item from the existing list</p>
-</div>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3b. User wishes to delete an item from the menu</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3b1. User searches for the menu item to be deleted</p>
-<div class="paragraph">
-<p>3b2. FMS shows the list of items with that menu name</p>
-</div>
-<div class="paragraph">
-<p>3b3. User looks for the INDEX of the particular item to be deleted and deletes the item</p>
-</div>
-<div class="paragraph">
-<p>3b4. FMS deletes the food item from the existing list</p>
-</div>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>3c. User wishes to add new item to the menu</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3c1. User enters the new item into the menu</p>
-<div class="paragraph">
-<p>3c2. FMS adds the entered menu to the existing menu list</p>
-</div>
+<p>1a1. RMS displays an error message stating what the valid item types are.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -861,6 +880,194 @@ in the order so that bonus points can be accumulated when the order is confirmed
 </div>
 </li>
 </ul>
+</div>
+<h3 id="use-case-add-menu" class="discrete">Use case: Add Menu</h3>
+<div class="paragraph">
+<p>Actor: Manager
+Preconditions: List Menu By Type command should be executed prior to this use case.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New menu item is added to the RMS.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new menu item with the required parameters.</p>
+</li>
+<li>
+<p>RMS adds a new menu item to the existing menu list with the parameters that were specified by the User.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that an invalid command format has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS displays an error that says the command format is invalid.</p>
+</li>
+<li>
+<p>1a2. RMS displays information on the proper use of the command along with an example.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. RMS detects that the new menu item to be added has the same name as one of the exisitng menu items.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. RMS detects this as an an attempt to add a duplicate menu item.</p>
+</li>
+<li>
+<p>1b2. RMS displays an error that says the employee already exists in Rms.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. RMS detects that the price field entered is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1c1. RMS dispays an error message stating the appropriate price field argument to be entered.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1d. RMS detects that the type field entered is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1d1. RMS dispays an error message stating what the valid item types are.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-menu" class="discrete">Use case: Delete menu</h3>
+<div class="paragraph">
+<p>Actor: Restaurant Manager<br>
+Preconditions: List Menu By Type or Find Menu use case should be executed prior to this use case this use case.<br>
+Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The specified menu item will be deleted from the RMS.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete menu item by using the index as shown on the list of menu items.</p>
+</li>
+<li>
+<p>RMS deletes a menu item of the specified index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. RMS detects that an invalid index has been entered.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. RMS displays an error that says the index provided is invalid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-view-a-menu-item" class="discrete">Use case: View A Menu Item</h3>
+<div class="paragraph">
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: View A Menu Item<br>
+Actor: Cashier<br>
+Preconditions: User executes the List Menu By Type use case before using this use case.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses to view a particular menu item from the existing menu list.</p>
+</li>
+<li>
+<p>RMS shows the menu item of that particular index.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<h3 id="use-case-find-menu" class="discrete">Use case: Find Menu</h3>
+<div class="paragraph">
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: Find Menu<br>
+Actor: Cashier</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses to find menu items containing some keywords.</p>
+</li>
+<li>
+<p>RMS shows the menu items that contain those keywords.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 <h3 id="use-case-list-employees" class="discrete">Use case: List employees</h3>
 <div class="paragraph">
@@ -1302,4 +1509,4 @@ Guarantees:</p>
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 06:03:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 06:49:05 UTC</div></div></div></body></html>
