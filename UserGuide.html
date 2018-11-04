@@ -11,24 +11,25 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
+<li><a href="#important-terminology">3. Important Terminology</a></li>
+<li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#menu">3.1. Menu</a></li>
-<li><a href="#MemberCommands">3.2. Members</a></li>
-<li><a href="#employees">3.3. Employees</a></li>
-<li><a href="#order">3.4. Order</a></li>
-<li><a href="#statistics">3.5. Statistics</a></li>
-<li><a href="#saving-the-data">3.6. Saving the data</a></li>
+<li><a href="#menu">4.1. Menu</a></li>
+<li><a href="#MemberCommands">4.2. Members</a></li>
+<li><a href="#employees">4.3. Employees</a></li>
+<li><a href="#order">4.4. Order</a></li>
+<li><a href="#statistics">4.5. Statistics</a></li>
+<li><a href="#saving-the-data">4.6. Saving the data</a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a>
+<li><a href="#faq">5. FAQ</a></li>
+<li><a href="#command-summary">6. Command Summary</a>
 <ul class="sectlevel2">
-<li><a href="#menu-2">5.1. Menu</a></li>
-<li><a href="#employees-2">5.2. Employees</a></li>
-<li><a href="#members">5.3. Members</a></li>
-<li><a href="#order-2">5.4. Order</a></li>
-<li><a href="#statistics-2">5.5. Statistics</a></li>
+<li><a href="#menu-2">6.1. Menu</a></li>
+<li><a href="#employees-2">6.2. Employees</a></li>
+<li><a href="#members">6.3. Members</a></li>
+<li><a href="#order-2">6.4. Order</a></li>
+<li><a href="#statistics-2">6.5. Statistics</a></li>
 </ul>
 </li>
 </ul>
@@ -87,7 +88,7 @@
 <p><strong><code>listmenu</code></strong> : lists all menu items</p>
 </li>
 <li>
-<p><strong><code>addmember</code></strong><code>n/John Doe p/98765432 e/johnd@example.com d/10182017</code> : adds a member named <code>John Doe</code> to the Restaurant Management System.</p>
+<p><strong><code>addmember</code></strong><code>John Doe</code> : adds a member named <code>John Doe</code> to the Restaurant Management System.</p>
 </li>
 <li>
 <p><strong><code>listorder</code></strong> : lists all orders in the order list.</p>
@@ -102,14 +103,32 @@
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<h2 id="important-terminology"><a class="link" href="#important-terminology">3. Important Terminology</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><em>A customer is anyone who wants to place an order.</em></p>
+</li>
+<li>
+<p><em>A member in the RMS is a registered customer who enjoys more benefits than an unregistered customer.</em></p>
+</li>
+<li>
+<p><em>A dish is a food item on the menu.</em></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -156,9 +175,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="menu"><a class="link" href="#menu">3.1. Menu</a></h3>
+<h3 id="menu"><a class="link" href="#menu">4.1. Menu</a></h3>
 <div class="sect3">
-<h4 id="show-main-menu"><a class="link" href="#show-main-menu">3.1.1. Show Main Menu</a></h4>
+<h4 id="show-main-menu"><a class="link" href="#show-main-menu">4.1.1. Show Main Menu</a></h4>
 <div class="paragraph">
 <p>Shows a list of menu categories available.<br></p>
 </div>
@@ -167,7 +186,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-menu"><a class="link" href="#list-menu">3.1.2. List Menu</a></h4>
+<h4 id="list-menu"><a class="link" href="#list-menu">4.1.2. List Menu</a></h4>
 <div class="paragraph">
 <p>Shows a list of all the menu items.<br></p>
 </div>
@@ -186,7 +205,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-menu-according-to-category"><a class="link" href="#list-menu-according-to-category">3.1.3. List Menu According to Category</a></h4>
+<h4 id="list-menu-according-to-category"><a class="link" href="#list-menu-according-to-category">4.1.3. List Menu According to Category</a></h4>
 <div class="paragraph">
 <p>Shows a list of the menu items of a particular category type (e.g Main, Sides).<br></p>
 </div>
@@ -205,14 +224,14 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-all-menu"><a class="link" href="#view-all-menu">3.1.4. View All Menu</a></h4>
+<h4 id="view-all-menu"><a class="link" href="#view-all-menu">4.1.4. View All Menu</a></h4>
 <div class="paragraph">
 <p>Shows the detail of the a menu item with a particular index.<br>
 Format: <code>viewallmenu INDEX</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-menu"><a class="link" href="#add-menu">3.1.5. Add Menu</a></h4>
+<h4 id="add-menu"><a class="link" href="#add-menu">4.1.5. Add Menu</a></h4>
 <div class="paragraph">
 <p>Add a new item to the menu.<br>
 Format: <code>addmenu NAME p/PRICE type/TYPE [t/TAG]</code></p>
@@ -231,7 +250,7 @@ System adds Cheese Fries to the existing menu.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-menu"><a class="link" href="#delete-menu">3.1.6. Delete Menu</a></h4>
+<h4 id="delete-menu"><a class="link" href="#delete-menu">4.1.6. Delete Menu</a></h4>
 <div class="paragraph">
 <p>Delete an item on the menu<br>
 Format: <code>deletemenu INDEX</code></p>
@@ -254,7 +273,7 @@ System deletes Cheese Fries in index 3 from the menu.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find-menu"><a class="link" href="#find-menu">3.1.7. Find Menu</a></h4>
+<h4 id="find-menu"><a class="link" href="#find-menu">4.1.7. Find Menu</a></h4>
 <div class="paragraph">
 <p>Finds the menu item(s) related to the keywords typed in by the user.<br>
 Format: <code>findmenu KEYWORD [MORE KEYWORDS]</code></p>
@@ -280,9 +299,9 @@ Returns Double Cheese Burger, Veggie Burger, Coke, Coke Zero, Fries, Curly Fries
 </div>
 </div>
 <div class="sect2">
-<h3 id="MemberCommands"><a class="link" href="#MemberCommands">3.2. Members</a></h3>
+<h3 id="MemberCommands"><a class="link" href="#MemberCommands">4.2. Members</a></h3>
 <div class="sect3">
-<h4 id="add-member"><a class="link" href="#add-member">3.2.1. Add Member</a></h4>
+<h4 id="add-member"><a class="link" href="#add-member">4.2.1. Add Member</a></h4>
 <div class="paragraph">
 <p>Add a new member to the RMS<br>
 Format: <code>addmember</code> NAME</p>
@@ -294,7 +313,7 @@ Returns: New member added: kangming Points: 0 Date: Wed Oct 31 20:30:50 SRET 201
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-member"><a class="link" href="#list-member">3.2.2. List Member</a></h4>
+<h4 id="list-member"><a class="link" href="#list-member">4.2.2. List Member</a></h4>
 <div class="paragraph">
 <p>Shows a list of all the members in the RMS. Displays the NAME, POINTS, DATE JOINED, MEMBERSHIP TIER of each member.<br>
 Format: <code>listmembers</code></p>
@@ -309,16 +328,16 @@ Format: <code>delmember INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="employees"><a class="link" href="#employees">3.3. Employees</a></h3>
+<h3 id="employees"><a class="link" href="#employees">4.3. Employees</a></h3>
 <div class="sect3">
-<h4 id="list-employees"><a class="link" href="#list-employees">3.3.1. List Employees</a></h4>
+<h4 id="list-employees"><a class="link" href="#list-employees">4.3.1. List Employees</a></h4>
 <div class="paragraph">
 <p>Show a list of all the employees on the RMS.<br>
 Format: <code>listemp</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-employee"><a class="link" href="#add-employee">3.3.2. Add Employee</a></h4>
+<h4 id="add-employee"><a class="link" href="#add-employee">4.3.2. Add Employee</a></h4>
 <div class="paragraph">
 <p>Adds a new employee to the RMS.<br>
 Format: <code>addemp NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS pos/POSITION</code></p>
@@ -330,7 +349,7 @@ Format: <code>addemp NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS pos/POSITION</code></
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-employee"><a class="link" href="#edit-employee">3.3.3. Edit Employee</a></h4>
+<h4 id="edit-employee"><a class="link" href="#edit-employee">4.3.3. Edit Employee</a></h4>
 <div class="paragraph">
 <p>Edit details of an employee in the RMS.<br>
 Format: <code>editemp INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [pos/POSITION]</code></p>
@@ -370,7 +389,7 @@ Edits the position of the 1st employee in the employee list to Cashier.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-employee"><a class="link" href="#delete-employee">3.3.4. Delete Employee</a></h4>
+<h4 id="delete-employee"><a class="link" href="#delete-employee">4.3.4. Delete Employee</a></h4>
 <div class="paragraph">
 <p>Deletes an employee from the RMS.<br>
 Format: <code>delemp INDEX</code></p>
@@ -404,7 +423,7 @@ Deletes the 1st employee in the employee list.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clock-in"><a class="link" href="#clock-in">3.3.5. Clock In</a></h4>
+<h4 id="clock-in"><a class="link" href="#clock-in">4.3.5. Clock In</a></h4>
 <div class="paragraph">
 <p>Clocks in attendance for the specified employee based on the current time<br>
 Format: <code>clockIn NAME</code></p>
@@ -424,7 +443,7 @@ Clocks in for the employee John Doe.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clock-out"><a class="link" href="#clock-out">3.3.6. Clock Out</a></h4>
+<h4 id="clock-out"><a class="link" href="#clock-out">4.3.6. Clock Out</a></h4>
 <div class="paragraph">
 <p>Clocks out for the specified employee based on the current time.<br>
 Format: <code>clockOut NAME</code></p>
@@ -444,23 +463,23 @@ Clocks out for the employee John Doe.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="order"><a class="link" href="#order">3.4. Order</a></h3>
+<h3 id="order"><a class="link" href="#order">4.4. Order</a></h3>
 <div class="sect3">
-<h4 id="add-order"><a class="link" href="#add-order">3.4.1. Add Order</a></h4>
+<h4 id="add-order"><a class="link" href="#add-order">4.4.1. Add Order</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/AddOrderInstruction.png" alt="AddOrderInstruction">
 </div>
 </div>
 <div class="paragraph">
-<p>To add new order to the order list, a draft must be completed before adding it to the order list.<br></p>
+<p>To add a new order to the order list, a draft must be completed before adding it to the order list.<br></p>
 </div>
 <div class="paragraph">
-<p>To do so, dishes must be added into the draft, and then it can be added into the order list after
+<p>To do so, dishes must be added into the draft before it can be added into the order list after
 the draft is confirmed.</p>
 </div>
 <div class="paragraph">
-<p>Registered customer of the member list can be added into the order draft to accumulate member points
+<p>If the customer happens to be a member, the customer&#8217;s information can be found in the member list and can be added into the order draft to accumulate member points
 once the order is confirmed.</p>
 </div>
 <div class="ulist">
@@ -468,14 +487,15 @@ once the order is confirmed.</p>
 <li>
 <p><strong>Display Draft And Instruction For Adding New Order</strong><br></p>
 <div class="paragraph">
-<p>Display the current draft and the list of order draft commands used for adding a new order<br></p>
+<p>Displays the current draft, steps to add an order and the list of order draft commands that can be used<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>addorder</code></p>
 </div>
 </li>
 <li>
-<p><strong>Pick A Member As The Customer Of The Draft</strong><br></p>
+<p><strong>Select A Member As The Customer Of The Draft</strong><br>
+<em>This step is only necessary if the customer is a member.</em></p>
 <div class="paragraph">
 <p>Select a member from the last shown member list to be the customer of the draft order.<br></p>
 </div>
@@ -548,7 +568,7 @@ newly added order can no longer be changed.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-order"><a class="link" href="#delete-order">3.4.2. Delete Order</a></h4>
+<h4 id="delete-order"><a class="link" href="#delete-order">4.4.2. Delete Order</a></h4>
 <div class="paragraph">
 <p>Delete an order.<br></p>
 </div>
@@ -567,7 +587,7 @@ newly added order can no longer be changed.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear-order"><a class="link" href="#clear-order">3.4.3. Clear Order</a></h4>
+<h4 id="clear-order"><a class="link" href="#clear-order">4.4.3. Clear Order</a></h4>
 <div class="paragraph">
 <p>Clear the entire order list.<br></p>
 </div>
@@ -576,7 +596,7 @@ newly added order can no longer be changed.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-orders"><a class="link" href="#list-orders">3.4.4. List Orders</a></h4>
+<h4 id="list-orders"><a class="link" href="#list-orders">4.4.4. List Orders</a></h4>
 <div class="paragraph">
 <p>Shows a list of all the current orders.<br></p>
 </div>
@@ -592,9 +612,9 @@ newly added order can no longer be changed.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.5. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">4.5. Statistics</a></h3>
 <div class="sect3">
-<h4 id="view-employee-statistics"><a class="link" href="#view-employee-statistics">3.5.1. View Employee Statistics</a></h4>
+<h4 id="view-employee-statistics"><a class="link" href="#view-employee-statistics">4.5.1. View Employee Statistics</a></h4>
 <div class="paragraph">
 <p>Display the employee statistics overview<br>
 Format: statsemp</p>
@@ -605,7 +625,7 @@ Format: statsemp</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-member-statistics"><a class="link" href="#view-member-statistics">3.5.2. View Member Statistics</a></h4>
+<h4 id="view-member-statistics"><a class="link" href="#view-member-statistics">4.5.2. View Member Statistics</a></h4>
 <div class="paragraph">
 <p>Display the member statistics overview<br>
 Format: statsmember</p>
@@ -616,7 +636,7 @@ Format: statsmember</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-menu-statistics"><a class="link" href="#view-menu-statistics">3.5.3. View Menu Statistics</a></h4>
+<h4 id="view-menu-statistics"><a class="link" href="#view-menu-statistics">4.5.3. View Menu Statistics</a></h4>
 <div class="paragraph">
 <p>Display the menu statistics overview without any parameters or with optional parameters <code>f/</code> or <code>t/</code> to set date range for calculatation of statistics<br>
 Format: statsmenu [f/mmddyyyy] [t/mmddyyyy]</p>
@@ -642,7 +662,7 @@ Format: statsmenu [f/mmddyyyy] [t/mmddyyyy]</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="view-order-statistics"><a class="link" href="#view-order-statistics">3.5.4. View Order Statistics</a></h4>
+<h4 id="view-order-statistics"><a class="link" href="#view-order-statistics">4.5.4. View Order Statistics</a></h4>
 <div class="paragraph">
 <p>Display the order statistics overview<br>
 Format: statsorder</p>
@@ -654,7 +674,7 @@ Format: statsorder</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.6. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.6. Saving the data</a></h3>
 <div class="paragraph">
 <p>Data from the Restaurant Management System are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -663,7 +683,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
@@ -672,10 +692,10 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="menu-2"><a class="link" href="#menu-2">5.1. Menu</a></h3>
+<h3 id="menu-2"><a class="link" href="#menu-2">6.1. Menu</a></h3>
 <div class="paragraph">
 <p><strong>Show Main Menu Page</strong> : <code>showMainMenu</code></p>
 </div>
@@ -699,7 +719,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="employees-2"><a class="link" href="#employees-2">5.2. Employees</a></h3>
+<h3 id="employees-2"><a class="link" href="#employees-2">6.2. Employees</a></h3>
 <div class="paragraph">
 <p><strong>List Emplyees</strong> : <code>listemp</code></p>
 </div>
@@ -720,7 +740,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="members"><a class="link" href="#members">5.3. Members</a></h3>
+<h3 id="members"><a class="link" href="#members">6.3. Members</a></h3>
 <div class="paragraph">
 <p><strong>Add Member</strong> : <code>addmember NAME</code></p>
 </div>
@@ -738,7 +758,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="order-2"><a class="link" href="#order-2">5.4. Order</a></h3>
+<h3 id="order-2"><a class="link" href="#order-2">6.4. Order</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -779,7 +799,7 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics-2"><a class="link" href="#statistics-2">5.5. Statistics</a></h3>
+<h3 id="statistics-2"><a class="link" href="#statistics-2">6.5. Statistics</a></h3>
 <div class="paragraph">
 <p><strong>View Employee Statistics</strong> : <code>statsemp</code></p>
 </div>
@@ -794,4 +814,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 12:44:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-04 13:43:52 UTC</div></div></div></body></html>
