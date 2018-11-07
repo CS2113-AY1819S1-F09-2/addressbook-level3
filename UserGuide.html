@@ -522,7 +522,8 @@ Clocks out for the employee John Doe.</p>
 the draft is confirmed.</p>
 </div>
 <div class="paragraph">
-<p>If the customer happens to be a member, the customer&#8217;s information can be found in the member list and can be added into the order draft to accumulate member points
+<p>If the customer is a registered member, the customer&#8217;s information can be found in the member list and can be added
+into the order draft to use and accumulate member points
 once the order is confirmed.</p>
 </div>
 <div class="ulist">
@@ -534,23 +535,6 @@ once the order is confirmed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>addorder</code></p>
-</div>
-</li>
-<li>
-<p><strong>Select A Member As The Customer Of The Draft</strong><br>
-<em>This step is only necessary if the customer is a member.</em></p>
-<div class="paragraph">
-<p>Select a member from the last shown member list to be the customer of the draft order.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>draftcustomer INDEX</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The index refers to the index number shown in the last shown member list.</p>
-</li>
-</ul>
 </div>
 </li>
 <li>
@@ -581,6 +565,47 @@ integer, then its quantity will be adjusted to the new value.</p>
 <ul>
 <li>
 <p>The index refers to the index number shown in the last shown menu list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Select A Member As The Customer Of The Draft</strong><br>
+<em>This step is only necessary if the customer is a member.</em></p>
+<div class="paragraph">
+<p>Select a member from the last shown member list to be the customer of the draft order.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>draftcustomer INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the last shown member list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Redeems member points in the draft order</strong><br>
+<em>This step can only be done if a member is assigned as the customer of the draft order</em></p>
+<div class="paragraph">
+<p>Assign member points to be redeemed as discount for the draft order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>draftpoints POINTS</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The points redeemed must be a non-negative integer.</p>
+</li>
+<li>
+<p>The limit to the redeemable points is set as the smaller value between the amount of points the customer currently
+has and the maximum amount of points can be deduced such that the final price is not less than zero.</p>
+</li>
+<li>
+<p>If the assigned redeemed points is more than the limit, then it will be set back to the limit.</p>
 </li>
 </ul>
 </div>
@@ -812,12 +837,16 @@ There is no need to save manually.</p>
 <p><strong>Display Add Order Commands</strong>: <code>addorder</code></p>
 </li>
 <li>
-<p><strong>Select Member As Customer Of The Draft</strong>: <code>draftcustomer INDEX</code><br>
+<p><strong>Edit Draft Dishes</strong>: <code>draftdish INDEX q/QUANTITY</code><br>
+e.g. <code>draftdish 4 q/1</code></p>
+</li>
+<li>
+<p><strong>Select Draft Customer</strong>: <code>draftcustomer INDEX</code><br>
 e.g. <code>draftcustomer 2</code></p>
 </li>
 <li>
-<p><strong>Edit Dishes In The Draft</strong>: <code>draftdish INDEX q/QUANTITY</code><br>
-e.g. <code>draftdish 4 q/1</code></p>
+<p><strong>Redeem Member Points</strong>: <code>draftpoints POINTS</code><br>
+e.g. <code>draftpoints 100</code></p>
 </li>
 <li>
 <p><strong>Clear The Draft</strong>: <code>cleardraft</code></p>
@@ -857,4 +886,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-07 08:41:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-07 13:27:23 UTC</div></div></div></body></html>
