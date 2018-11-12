@@ -32,6 +32,7 @@
 <li><a href="#adding-a-new-order">4.1. Adding a new order</a></li>
 <li><a href="#saving-and-loading-the-order-list">4.2. Saving and Loading the order list</a></li>
 <li><a href="#proposed-program-state-control">4.3. [Proposed] Program State Control</a></li>
+<li><a href="#statistics">4.4. Statistics</a></li>
 </ul>
 </li>
 <li><a href="#Testing">5. Testing</a>
@@ -419,7 +420,7 @@ As a more OOP model, we can store a Tag list in RMS, which all the relevant feat
 <div class="ulist">
 <ul>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>This component saves the RMS data in an XML format and is also able to load the XML back into data.</p>
 </li>
 </ul>
 </div>
@@ -483,6 +484,27 @@ message can be specifically wrote in each states to reduce the burdens of rememb
 <div class="paragraph">
 <p>This can be done by introducing a status variable in the <code>Logic</code> module, creating command to change the state variable
 and adjusting the returning command in the <code>Parser</code> based on that variable.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics"><a class="link" href="#statistics">4.4. Statistics</a></h3>
+<div class="sect3">
+<h4 id="displaying-tables"><a class="link" href="#displaying-tables">4.4.1. Displaying Tables</a></h4>
+<div class="paragraph">
+<p>As RMS is a CLI (Command Line Interface) based program, we are not able to display any graphical tables to the users. However, the alternative to this is to print out the tables in an Ascii format. Therefore, the <code>AsciiTable</code> class is created. This class helps to format any data into a string that is able to display as an AsciiTable.</p>
+</div>
+<div class="paragraph">
+<p>In order to display this table correctly, the font being used in the results windows needs to be a monospaced<sup>*</sup> font.</p>
+</div>
+<div class="paragraph">
+<p><em>*Monospaced fonts refer to fonts with every characters having equal width size.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculating-menu-statistics"><a class="link" href="#calculating-menu-statistics">4.4.2. Calculating Menu Statistics</a></h4>
+<div class="paragraph">
+<p>The way the statistics for menu items are calculated is by iterating through the list of orders and incrementing a counter for each unique menu items every time it is sold. These counters are then sorted in ascending order and it will print the menu item with the most sales and the one with the least sales for the best sellers and the unpopular items respectively.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1688,4 +1710,4 @@ Guarantees:</p>
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:31:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:23:14 UTC</div></div></div></body></html>

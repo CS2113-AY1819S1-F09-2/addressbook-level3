@@ -3,52 +3,199 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ang Wei Ming - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-restaurant-management-system"><a class="link" href="#project-restaurant-management-system">PROJECT: Restaurant Management System</a></h2>
 <div class="sectionbody">
-<hr>
+<div class="imageblock">
+<div class="content">
+<img src="../images/homepage.png" alt="homepage">
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Restaurant Management System (RMS) is a desktop restaurant management application used to help restaurant managers oversee their various processes in a more elegant and efficient way.</p>
+<p>My name is Ang Wei Ming and I am a Year 2 student majoring in Information Security at National University of Singapore. Over the past 12 weeks I have been working on a project for the twinned module CS2113T/CS2101 with my team. The following is my portfolio for this project that we have completed.</p>
+</div>
+<div class="paragraph">
+<p>This portfolio serves to provide an insight on the Restaurant Management System (RMS) project such as the purpose of this project, as well as the various features that our team has developed. Also stated are the different roles of each team members in the project and more importantly the contributions that I have made to the code and documentations.</p>
+</div>
+<div class="sect2">
+<h3 id="project-description"><a class="link" href="#project-description">Project Description</a></h3>
+<div class="paragraph">
+<p>As frequent customers of restaurants, our team realized that most restaurants around the world are using inefficient systems to manage their restaurants. This includes taking orders on papers, calculating daily revenues at the end of the day, or even having a manual clocking machine for employees starting or ending their shift. Even if a restaurant uses alternative systems to mitigate such issues, they are usually segregated, causing the restaurant manager to maintain different systems all at once. All these can affect the way the restaurant is being run and possibly affect the quality of food and service negatively.</p>
+</div>
+<div class="paragraph">
+<p>Therefore, our team decided to develop an All-in-One application called Restaurant Management System (RMS) that is able to handle the different processes within a running restaurant efficiently.</p>
+</div>
+<div class="paragraph">
+<p>Restaurant Management System (RMS) is a CLI<sup>*</sup> based desktop application that can be used within a restaurant to perform various tasks such as listing menu items, order taking, as well as keeping track of members and employees. Restaurant managers will also be able to oversee the different processes more efficiently through a statistics feature.</p>
+</div>
+<div class="paragraph">
+<p><em>* Command Line Interface. Refers to an user interface where an end user enters commands into the application by typing instead of clicking.</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="features"><a class="link" href="#features">Features</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="sect3">
+<h4 id="employee-feature"><a class="link" href="#employee-feature">Employee feature</a></h4>
+<div class="paragraph">
+<p>Manage employees working in the restaurant by adding their information into the application. Employees will have to use the application to clock in when the shift starts and clock out when it ends.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="member-feature"><a class="link" href="#member-feature">Member feature</a></h4>
+<div class="paragraph">
+<p>Customers of the restaurant can opt to sign up as a member in the application and will be able to accumulate points that can be used to offset future orders made with the application.</p>
+</div>
+<div class="paragraph">
+<p>Members are also sorted into different tiers according to the points accumulated</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="menu-feature"><a class="link" href="#menu-feature">Menu feature</a></h4>
+<div class="paragraph">
+<p>Restaurant managers will use this feature to list new items on the menu or make adjustments to the menu such as pricing and this set of menu can then be used when taking orders.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="order-feature"><a class="link" href="#order-feature">Order feature</a></h4>
+<div class="paragraph">
+<p>Cashiers can take customers' orders and this order information such as the sales revenue and the items ordered will be stored in the application. Additionally, orders can be tagged to a customer if he/she is a member.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="statistics-feature"><a class="link" href="#statistics-feature">Statistics feature</a></h4>
+<div class="paragraph">
+<p>Able to display the statistics for the different features.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Employee statistics will show the attendance of their clocking and the current on duty personnel.</p>
+</li>
+<li>
+<p>Member statistics shows the number of new members over a period of time and the number of members in each member tier.</p>
+</li>
+<li>
+<p>Menu statistics tells us the sales of each menu items as well as the most and least popular items for each categories in the menu (e.g. mains or beverages).</p>
+</li>
+<li>
+<p>Order statistics displays the total number of orders and the revenue for day, month and year, along with the revenue for the past 12 months.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="team-roles"><a class="link" href="#team-roles">Team roles</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ang Wei Ming</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of the statistics feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Lim Kian Hong</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of the employee feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pham Quang Minh</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of the order feature as well as code testing.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Salsabil Tasnia</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of the menu feature.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tay Kang Ming</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of the member feature and the overall project coordination.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>This section describes in details the various contributions I made to the code base as well as the documentations of the project. Depending on the type of contribution, it is split into different sections.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="major-enhancements"><a class="link" href="#major-enhancements">Major Enhancements</a></h3>
+<div class="paragraph">
+<p>I added the statistics feature for all the different information stored in the application.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: Added statistics features for all the different data stored in the RMS.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: Allows restaurant managers to view the statistics of the menus, orders, members and employees.</p>
+<p><code>What it does</code>: As described in the features sections of this portfolio, the statistics feature allows restaurant managers to view the overview statistics of the menus, orders, members and employees</p>
 </li>
 <li>
-<p>Justification: This feature will be able to let the restaurant managers understand how his restaurant is currently performing as well as to keep track of the employees schedule.</p>
+<p><code>Justification</code>: This feature will be able to let the restaurant managers understand how the restaurant is currently performing and how much it is earning. It also allows the manager to keep track of their members and employees</p>
 </li>
 <li>
-<p>Highlights: Data displayed under the different statistics commands have to be easy to understand as well as useful to the restaurant managers.
-It required thinking from a perspective of a restaurant manager to understand what kind of data he/she would want to see.
-This implementation was challenging because I also had to make use of the limited data the other features were able to provide.</p>
+<p><code>Highlights</code>: Data displayed under the different statistics commands have to be easy to understand as well as useful to the restaurant managers.
+It required thinking from a perspective of a restaurant manager to understand what kind of information he/she would want to see.
+This implementation was challenging because apart from the thought process, I had to make use of the limited data the other features were able to provide.</p>
 </li>
 <li>
-<p>Credits: <a href="https://github.com/nusCS2113-AY1819S1/addressbook-level3" class="bare">https://github.com/nusCS2113-AY1819S1/addressbook-level3</a></p>
+<p><code>Credits</code>: <a href="https://github.com/nusCS2113-AY1819S1/addressbook-level3" class="bare">https://github.com/nusCS2113-AY1819S1/addressbook-level3</a></p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nuscs2113-ay1819s1.github.io/dashboard/#=undefined&amp;search=angwm">Project Reposense Page</a></p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p><strong>Code contributed</strong>: <a href="https://github.com/CS2113-AY1819S1-F09-2/main">Project Github Page</a></p>
-</li>
-<li>
-<p><strong>Other contributions</strong>:</p>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other Contributions</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Enhancements to existing features:</p>
+<p><code>Enhancements to existing features</code>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -61,32 +208,40 @@ This implementation was challenging because I also had to make use of the limite
 </div>
 </li>
 <li>
-<p>Documentation:</p>
+<p><code>Code Integration</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Addition of content to User Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/100">#100</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/122">#122</a></p>
-</li>
-<li>
-<p>Addition of content to Developer Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/8">#8</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/67">#67</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/114">#114</a></p>
+<p>Helped to integrate my team member&#8217;s codes during the start of the project when we worked without the Travis CI (Continuous Integration) tool</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Community:</p>
+<p><code>Documentation</code>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/107">#107</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/113">#113</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/117">#117</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/120">#120</a></p>
+<p>Addition of content to User Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/100">#100</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/122">#122</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/213">#213</a></p>
+</li>
+<li>
+<p>Addition of content to Developer Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/8">#8</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/67">#67</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/114">#114</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/213">#213</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Community</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/107">#107</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/113">#113</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/117">#117</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/120">#120</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/138">#138</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/202">#202</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/203">#203</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/205">#205</a></p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -197,123 +352,29 @@ Format: statsorder</p>
 <div class="ulist">
 <ul>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>This component saves the RMS data in an XML format and is also able to load the XML back into data.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="statistics-2"><a class="link" href="#statistics-2">Statistics</a></h3>
+<div class="sect3">
+<h4 id="displaying-tables"><a class="link" href="#displaying-tables">Displaying Tables</a></h4>
 <div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+<p>As RMS is a CLI (Command Line Interface) based program, we are not able to display any graphical tables to the users. However, the alternative to this is to print out the tables in an Ascii format. Therefore, the <code>AsciiTable</code> class is created. This class helps to format any data into a string that is able to display as an AsciiTable.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
-<colgroup>
-<col style="width: 22%;">
-<col style="width: 23%;">
-<col style="width: 25%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add, edit and delete orders made</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">collate the customer’s orders and send it to the kitchen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add new members, delete old members and view all members of the restaurant</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of which customer has a membership at the restaurant</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all existing menu items of the restaurant</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know which item the customer wants when taking an order</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view the recommended items in the menu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">suggest customers on what to order of needed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cashier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">search for a menu item</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a particular item easily without viewing the menu lists</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the restaurant business statistics such as daily revenue</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">understand if the restaurant is making a loss or not</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of employees wages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know how much I have to pay or how much I have paid to restaurant employees</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of which menu item are sold the most</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know which food is the best seller</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add, edit and delete items from the menu</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep my restaurant menu interesting</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">list employees</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to view the details of the employees working in the restaurant</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add, edit and delete employees from the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to manage information of the employees working in the restaurant</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all the orders made</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know which order I need to prepare next</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Chef</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update the order status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">let the customers know that their orders are ready</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Employee</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clock in and clock out attendance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account for the time period which I am working</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p><em>{More to be added}</em></p>
+<p>In order to display this table correctly, the font being used in the results windows needs to be a monospaced<sup>*</sup> font.</p>
+</div>
+<div class="paragraph">
+<p><em>*Monospaced fonts refer to fonts with every characters having equal width size.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculating-menu-statistics"><a class="link" href="#calculating-menu-statistics">Calculating Menu Statistics</a></h4>
+<div class="paragraph">
+<p>The way the statistics for menu items are calculated is by iterating through the list of orders and incrementing a counter for each unique menu items every time it is sold. These counters are then sorted in ascending order and it will print the menu item with the most sales and the one with the least sales for the best sellers and the unpopular items respectively.</p>
 </div>
 <h3 id="use-case-view-employee-statistics" class="discrete">Use case: View employee statistics</h3>
 <div class="paragraph">
@@ -413,4 +474,6 @@ Format: statsorder</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:31:53 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:23:14 UTC</div></div></div></body></html>
