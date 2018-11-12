@@ -238,8 +238,8 @@ once the order is confirmed.</p>
 <li>
 <p><strong>Edit A Dish Item Of The Draft</strong><br></p>
 <div class="paragraph">
-<p>By picking a dish from the last shown menu and state the quantity to be added,
-a dish item can be added, deleted or edited in the draft order.<br></p>
+<p>By picking dishes from the last shown menu and state the quantity to be added,
+te dish items can be added, deleted or edited in the draft order.<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -247,28 +247,26 @@ a dish item can be added, deleted or edited in the draft order.<br></p>
 <p>If the quantity is set to 0, then the dish will be removed from the draft.</p>
 </li>
 <li>
-<p>If the quantity of a dish that is currently not in the draft is set to a
-positive integer, then the dish and its quantity will be added into the draft.</p>
-</li>
-<li>
-<p>If the quantity of a dish that is currently in the draft is set to a positive
-integer, then its quantity will be adjusted to the new value.</p>
+<p>If the quantity is a positive integer, then the quantity of the dish will be set to quantity.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Format: <code>draftdish INDEX q/QUANTITY</code></p>
+<p>Format: <code>draftdish INDEX q/QUANTITY [INDEX q/QUANTITY]&#8230;&#8203;</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The index refers to the index number shown in the last shown menu list.</p>
+<p>There must be no duplicated index in the input command.</p>
 </li>
 <li>
-<p>The index must be a non-negative integer.</p>
+<p>The indexes refer to the index numbers shown in the last shown menu list.</p>
 </li>
 <li>
-<p>The quantity must be a non-negative integer of 1-3 digits.</p>
+<p>The indexes must be non-negative integers.</p>
+</li>
+<li>
+<p>The quantities must be non-negative integers of 1-3 digits.</p>
 </li>
 </ul>
 </div>
@@ -555,4 +553,4 @@ and adjusting the returning command in the <code>Parser</code> based on that var
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:16:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 03:48:15 UTC</div></div></div></body></html>
