@@ -78,16 +78,48 @@
 <li>
 <p>Employee statistics will show the attendance of their clocking and the current on duty personnel.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsemp.png" alt="statsemp">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Member statistics shows the number of new members over a period of time and the number of members in each member tier.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsmember.png" alt="statsmember">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Menu statistics tells us the sales of each menu items as well as the most and least popular items for each categories in the menu (e.g. mains or beverages).</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsmenu.png" alt="statsmenu">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Order statistics displays the total number of orders and the revenue for day, month and year, along with the revenue for the past 12 months.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/statsorder.png" alt="statsorder">
+</div>
 </div>
 </div>
 </div>
@@ -263,7 +295,9 @@ This implementation was challenging because apart from the thought process, I ha
 <div class="sect3">
 <h4 id="view-employee-statistics"><a class="link" href="#view-employee-statistics">View Employee Statistics</a></h4>
 <div class="paragraph">
-<p>Display the employee statistics overview<br>
+<p>Displays the employee statistics overview<br>
+Overview consists of the number of employees in the system,
+current on duty employees and all the employees' recent 3 activity<br>
 Format: statsemp</p>
 </div>
 <div class="paragraph">
@@ -274,7 +308,9 @@ Format: statsemp</p>
 <div class="sect3">
 <h4 id="view-member-statistics"><a class="link" href="#view-member-statistics">View Member Statistics</a></h4>
 <div class="paragraph">
-<p>Display the member statistics overview<br>
+<p>Displays the member statistics overview<br>
+Overview consists of the number of new member signups on the current day, month and year.
+It also includes the number of members in each member tier.<br>
 Format: statsmember</p>
 </div>
 <div class="paragraph">
@@ -285,7 +321,9 @@ Format: statsmember</p>
 <div class="sect3">
 <h4 id="view-menu-statistics"><a class="link" href="#view-menu-statistics">View Menu Statistics</a></h4>
 <div class="paragraph">
-<p>Display the menu statistics overview without any parameters or with optional parameters <code>f/</code> or <code>t/</code> to set date range for calculatation of statistics<br>
+<p>Displays the menu statistics overview without any parameters or with optional parameters <code>f/</code> or <code>t/</code> to set date range for calculation of statistics<br>
+Overview consists of the number of sales for all the menu items in the system. Including menu items that was deleted but still exists in an order.<br>
+Bestsellers and least popular items are also displayed.
 Format: statsmenu [f/mmddyyyy] [t/mmddyyyy]</p>
 </div>
 <div class="paragraph">
@@ -311,7 +349,9 @@ Format: statsmenu [f/mmddyyyy] [t/mmddyyyy]</p>
 <div class="sect3">
 <h4 id="view-order-statistics"><a class="link" href="#view-order-statistics">View Order Statistics</a></h4>
 <div class="paragraph">
-<p>Display the order statistics overview<br>
+<p>Displays the order statistics overview<br>
+Overview consists of the number of sales as well as the revenue for the current day, month and year<br>
+Past 12 monthly revenue are also displayed here.
 Format: statsorder</p>
 </div>
 <div class="paragraph">
@@ -476,4 +516,4 @@ Format: statsorder</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:23:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:20:16 UTC</div></div></div></body></html>
