@@ -21,7 +21,7 @@
 <p>For this system, I have developed the Menu system. A system that is vital for day-to-day operations of any restaurant, this feature is primarily catered to cashiers and restaurant managers. It consists of a database that stores all the menu items of a restaurant and separates them into different categories: Main, Sides, Beverage, Others, Set Meals. The menu data base is accessed for multiple operations of a restaurant, such as taking orders and collating statistics. The menu is accessed through a set of commands that I have implemented to support different operations. Some of these commands accesses the menu base, while others modifies the existing database.</p>
 </div>
 <div class="paragraph">
-<p>RMS was created using Java and has a user interface that uses CLI. The project contains has about 10k Lines of Code and is thoroughly tested through multiple forms of testing. Through this project, I have gained experience in Java programming, learned how to effectively use Git Hub to collaborate with other programmers for a project and conduct thorough testing and documentation necessary for a programming project.</p>
+<p>RMS was created using Java and has a user interface that uses CLI. The project contains has about 10k Lines of Code and is thoroughly tested through multiple forms of testing. Through this project, I have gained experience in Java programming, learned how to effectively use Git Hub to collaborate with other programmers for a project and conduct thorough testing and documentation necessary when developing a product.</p>
 </div>
 </div>
 </div>
@@ -47,7 +47,7 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/MainMenu.png" alt="MainMenu" width="600">
+<img src="../images/MainMenu.png" alt="MainMenu">
 </div>
 </div>
 <div class="ulist">
@@ -119,11 +119,15 @@ Menu allows cashiers to add and delete items, individually, from the menu data b
 <li>
 <p>Addition of content to User Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/73">#73</a>
 <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/135">#135</a>
-<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/144">#144</a></p>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/144">#144</a>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/202">#202</a>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/214">#214</a></p>
 </li>
 <li>
 <p>Addition of content to Developer Guide: <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/73">#73</a>
-<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/135">#135</a></p>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/135">#135</a>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/202">#202</a>
+<a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/214">#214</a></p>
 </li>
 </ul>
 </div>
@@ -133,7 +137,7 @@ Menu allows cashiers to add and delete items, individually, from the menu data b
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/109">#109</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/91">#91</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/37">#37</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/36">36</a>,</p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/109">#109</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/91">#91</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/37">#37</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/36">36</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/208">#208</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/209">#209</a>, <a href="https://github.com/CS2113-AY1819S1-F09-2/main/pull/206">#206</a></p>
 </li>
 <li>
 <p>Assisted class mates from other groups in debugging their codes</p>
@@ -154,7 +158,7 @@ Menu allows cashiers to add and delete items, individually, from the menu data b
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. This section provides explicit instructions on how to use the Menu Feature and explains the outcome of each of the menu commands. A summary of the different commands used to operate the Menu is also provided. Overall, this section serves as a good manual for RMS users and allows them to understand how the system works.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -172,7 +176,7 @@ Menu allows cashiers to add and delete items, individually, from the menu data b
 <div class="sect3">
 <h4 id="list-menu"><a class="link" href="#list-menu">List Menu</a></h4>
 <div class="paragraph">
-<p>Shows a list of all the menu items.<br></p>
+<p>Shows a list of all the menu items that exists in the restaurant&#8217;s menu database.<br></p>
 </div>
 <div class="paragraph">
 <p>Each menu item include details of: menu item, price, type and any relevant tags.<br></p>
@@ -191,7 +195,7 @@ Menu allows cashiers to add and delete items, individually, from the menu data b
 <div class="sect3">
 <h4 id="list-menu-according-to-category"><a class="link" href="#list-menu-according-to-category">List Menu According to Category</a></h4>
 <div class="paragraph">
-<p>Shows a list of the menu items of a particular category type, as shown in the Main Menu (e.g main, sides).<br></p>
+<p>Shows a list of the menu items of a particular category type. The category types are shown in the Main Menu (e.g main, sides).<br></p>
 </div>
 <div class="paragraph">
 <p>Each menu item include details of: menu item, price, type and any relevant tags.<br></p>
@@ -250,6 +254,9 @@ Format: <code>deletemenu INDEX</code></p>
 <ul>
 <li>
 <p>Deletes the menu item in that particular index</p>
+</li>
+<li>
+<p>Note that the user must perform 'List Menu' , 'List Menu According to Category' or 'Find Menu' first before performing 'Delete Menu'</p>
 </li>
 </ul>
 </div>
@@ -323,7 +330,7 @@ Returns Main: Double Cheese Burger, Sides: French Fries, Beverage: Sprite</p>
 <div class="sect2">
 <h3 id="menu-2"><a class="link" href="#menu-2">Menu</a></h3>
 <div class="paragraph">
-<p><strong>Show Main Menu Page</strong> : <code>showMainMenu</code></p>
+<p><strong>Show Main Menu Page</strong> : <code>showmainmenu</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Find Menu</strong> : <code>findmenu KEYWORD [MORE KEYWORDS]</code></p>
@@ -355,7 +362,7 @@ Returns Main: Double Cheese Burger, Sides: French Fries, Beverage: Sprite</p>
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. This sections provides various scenarios when different aspects of the Menu feature ought be used and who should use them. It also shows the Data diagram that I have created for the entire project. This section is especially useful for new Developers of RMS to have a better understanding of how each feature works and know the overall architecture of the product.</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -465,6 +472,38 @@ Guarantees:</p>
 </div>
 </li>
 </ul>
+</div>
+<h3 id="use-case-list-menu-to-view-all-menu-items" class="discrete">Use case: List Menu To View All Menu Items</h3>
+<div class="paragraph">
+<p>System: Restaurant Management System (RMS)<br>
+Use Case: List employees<br>
+Actor: Manager, Cashier<br></p>
+</div>
+<div class="paragraph">
+<p>Guarantees:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Displays list of menu items that exists in the menu database.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view all the menu items of the menu database, not just based on their categories.</p>
+</li>
+<li>
+<p>RMS displays all the menu items that exist in the restaurant&#8217;s database.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
 </div>
 <h3 id="use-case-add-menu" class="discrete">Use case: Add Menu</h3>
 <div class="paragraph">
@@ -655,4 +694,4 @@ Actor: Cashier</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 07:41:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 09:30:14 UTC</div></div></div></body></html>
