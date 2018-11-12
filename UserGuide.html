@@ -52,25 +52,13 @@
 <p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
 </li>
 <li>
+<p>Download the latest <code>Rms.jar</code> here</p>
+</li>
+<li>
 <p>Copy the file to the folder you want to use as the home folder for your Restaurant Management System.</p>
 </li>
 <li>
-<p>Import the file into Intellij.</p>
-</li>
-<li>
-<p>Find the project pane (usually located at the left side).</p>
-</li>
-<li>
-<p>Open up src/seedu.addressbook folder.</p>
-</li>
-<li>
-<p>Right Click on <code>Main</code>.</p>
-</li>
-<li>
-<p>Click <code>Run Main.main()</code>.</p>
-</li>
-<li>
-<p>The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the application. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui">
@@ -118,6 +106,9 @@
 <p><em>A customer is anyone who wants to place an order.</em></p>
 </li>
 <li>
+<p><em>An employee is a person that works at the restaurant.</em></p>
+</li>
+<li>
 <p><em>A member in the RMS is a registered customer who enjoys more benefits than an unregistered customer.</em></p>
 </li>
 <li>
@@ -132,33 +123,6 @@
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
-<div class="paragraph">
-<p><strong>How It Works</strong></p>
-</div>
-<div class="paragraph">
-<p>When the application is first started, users have to choose
- which state it wants to enter. There are 5 choices to pick from
- :</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Menu</p>
-</li>
-<li>
-<p>Order</p>
-</li>
-<li>
-<p>Customers</p>
-</li>
-<li>
-<p>Employees</p>
-</li>
-<li>
-<p>Statistics</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
 <p><strong>Command Format</strong></p>
 </div>
@@ -346,12 +310,25 @@ Returns Main: Double Cheese Burger, Sides: French Fries, Beverage: Sprite</p>
 <h4 id="add-member"><a class="link" href="#add-member">4.2.1. Add Member</a></h4>
 <div class="paragraph">
 <p>Add a new member to the RMS<br>
-Format: <code>addmember</code> NAME</p>
+Format: <code>addmember</code> NAME e/EMAIL</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Member name cannot be longer than 30 alphanumeric characters and spaces.</p>
+</li>
+<li>
+<p>Member name must have at least 1 character.</p>
+</li>
+<li>
+<p>Email should be 2 alphanumeric/period strings that are no longer than 20 characters separated by '@'</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Example:<br>
-<code>addmember kang ming</code><br>
-Returns: New member added: kangming Points: 0 Date: Wed Oct 31 20:30:50 SRET 2018 Tier: Bronze</p>
+<code>addmember kang ming e/kangming@rms.com</code><br>
+Returns:  New member added: kang ming | Email: <a href="mailto:kangming@rms.com">kangming@rms.com</a> | Available Points: 0 | Total Points: 0 | Tier: Bronze | Date: Mon Oct 20 22:12:07 SRET 2018</p>
 </div>
 </div>
 <div class="sect3">
@@ -387,7 +364,19 @@ Format: <code>addemp NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS pos/POSITION</code></
 <div class="ulist">
 <ul>
 <li>
-<p>Employees with same name are not allowed irregardless of it being in upper or lower case.</p>
+<p>Employees with exact same names are not allowed irregardless of it being in upper or lower case.</p>
+</li>
+<li>
+<p>Employee name cannot be longer than 30 alphanumeric characters and spaces.</p>
+</li>
+<li>
+<p>Employee name must have at least 1 character.</p>
+</li>
+<li>
+<p>Phone numbers must be an 8 digit number.</p>
+</li>
+<li>
+<p>Email should be 2 alphanumeric/period strings that are no longer than 20 characters separated by '@'</p>
 </li>
 </ul>
 </div>
@@ -419,6 +408,12 @@ Format: <code>editemp INDEX [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [pos/POSITION
 </li>
 <li>
 <p>The index must be a positive integer <code>1, 2, 3 &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>Phone numbers must be an 8 digit number.</p>
+</li>
+<li>
+<p>Email should be 2 alphanumeric/period strings that are no longer than 20 characters separated by '@'</p>
 </li>
 </ul>
 </div>
@@ -474,39 +469,39 @@ Deletes the 1st employee in the employee list.</p>
 <div class="sect3">
 <h4 id="clock-in"><a class="link" href="#clock-in">4.3.5. Clock In</a></h4>
 <div class="paragraph">
-<p>Clocks in attendance for the specified employee based on the current time<br>
-Format: <code>clockIn NAME</code></p>
+<p>Clocks in attendance for the specified employee based on the current date and time<br>
+Format: <code>clockin NAME</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>Employee must either have been newly created or
-have used the "Clock Out" command, otherwise, they would not be able to use this command.</p>
+have used the "Clock Out" command, otherwise the system will request the user to use the "Clock Out" command first.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Example:<br>
-<code>clockIn John Doe</code><br>
+<code>clockin John Doe</code><br>
 Clocks in for the employee John Doe.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="clock-out"><a class="link" href="#clock-out">4.3.6. Clock Out</a></h4>
 <div class="paragraph">
-<p>Clocks out for the specified employee based on the current time.<br>
-Format: <code>clockOut NAME</code></p>
+<p>Clocks out for the specified employee based on the current date and time.<br>
+Format: <code>clockout NAME</code></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Employee must have used the "Clock In" command, otherwise, they would not  e able to use this command.</p>
+<p>Employee must have used the "Clock In" command, otherwise the system will request the user to use the "Clock In" command first.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Example:<br>
-<code>clockOut John Doe</code><br>
+<code>clockout John Doe</code><br>
 Clocks out for the employee John Doe.</p>
 </div>
 </div>
@@ -826,10 +821,10 @@ There is no need to save manually.</p>
 <p><strong>Delete Employee</strong> : <code>delemp INDEX</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Clock In</strong> : <code>clockIn NAME</code></p>
+<p><strong>Clock In</strong> : <code>clockin NAME</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Clock Out</strong> : <code>clockOut NAME</code></p>
+<p><strong>Clock Out</strong> : <code>clockout NAME</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -905,4 +900,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:18:24 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 14:22:25 UTC</div></div></div></body></html>
