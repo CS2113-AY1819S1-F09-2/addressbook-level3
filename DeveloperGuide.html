@@ -18,9 +18,9 @@
 <li><a href="#configurations-to-do-before-writing-code">2.4. Configurations to do before writing code</a></li>
 </ul>
 </li>
-<li><a href="#design">3. Design</a>
+<li><a href="#Design-Architecture">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#architecture">3.1. Architecture</a></li>
 <li><a href="#Design-Ui">3.2. UI component</a></li>
 <li><a href="#Design-Logic">3.3. Logic component</a></li>
 <li><a href="#Design-Data">3.4. Data component</a></li>
@@ -30,9 +30,10 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#adding-a-new-order">4.1. Adding a new order</a></li>
-<li><a href="#saving-and-loading-the-order-list">4.2. Saving and Loading the order list</a></li>
-<li><a href="#proposed-program-state-control">4.3. [Proposed] Program State Control</a></li>
-<li><a href="#statistics">4.4. Statistics</a></li>
+<li><a href="#providing-the-option-for-members-to-accumulate-and-redeem-points">4.2. Providing the option for members to accumulate and redeem points</a></li>
+<li><a href="#saving-and-loading-the-order-list">4.3. Saving and Loading the order list</a></li>
+<li><a href="#proposed-program-state-control">4.4. [Proposed] Program State Control</a></li>
+<li><a href="#statistics">4.5. Statistics</a></li>
 </ul>
 </li>
 <li><a href="#Testing">5. Testing</a>
@@ -224,10 +225,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 3.1, &#8220;Architecture&#8221;</a>.</p>
-</li>
-<li>
-<p>Take a look at <a href="#GetStartedProgramming">[GetStartedProgramming]</a>.</p>
+<p>Get some sense of the overall design by reading <a href="#Design-Architecture">Section 3, &#8220;Design&#8221;</a>.</p>
 </li>
 </ol>
 </div>
@@ -236,10 +234,10 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
+<h2 id="Design-Architecture"><a class="link" href="#Design-Architecture">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<h3 id="architecture"><a class="link" href="#architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
@@ -272,6 +270,9 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 </li>
 <li>
 <p><code>Name</code> : The parent class to the MemberName and EmployeeName classes.</p>
+</li>
+<li>
+<p><code>Email</code>  The parent class to the MemberEmail and EmployeeEmail classes.</p>
 </li>
 </ul>
 </div>
@@ -307,8 +308,8 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="title">Figure 2. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p>The UI consists of <code>Main</code> that implements <code>Stoppable</code> and extends <code>Application</code>. <code>Main</code> is also dependant on <code>Gui</code> which is dependant on <code>MainWindow</code>.
-Furthermore, <code>Gui</code> and <code>MainWindow</code> are both dependant on <code>Logic</code>.</p>
+<p>The UI consists of <code>Main</code> that implements <code>Stoppable</code> and extends <code>Application</code>. <code>Main</code> is also dependent on <code>Gui</code> which is dependant on <code>MainWindow</code>.
+Furthermore, <code>Gui</code> and <code>MainWindow</code> are both dependent on <code>Logic</code>.</p>
 </div>
 <div class="paragraph">
 <p>The components use JavaFx UI framework.</p>
@@ -436,7 +437,7 @@ As a more OOP model, we can store a Tag list in RMS, which all the relevant feat
 <div class="sect2">
 <h3 id="adding-a-new-order"><a class="link" href="#adding-a-new-order">4.1. Adding a new order</a></h3>
 <div class="paragraph">
-<p>To avoid writing a long command line when ordering a long list of dishes, a draft ordering system is implemented.</p>
+<p>To avoid writing a long command line when ordering a long list of dishes, a draft order system was implemented.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -457,7 +458,20 @@ member points of the customer is updated, and the ordering draft is cleared afte
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-and-loading-the-order-list"><a class="link" href="#saving-and-loading-the-order-list">4.2. Saving and Loading the order list</a></h3>
+<h3 id="providing-the-option-for-members-to-accumulate-and-redeem-points"><a class="link" href="#providing-the-option-for-members-to-accumulate-and-redeem-points">4.2. Providing the option for members to accumulate and redeem points</a></h3>
+<div class="paragraph">
+<p>To allow members in the RMS to accumulate and redeem points when an order is made, the command <code>draftpoints</code> was implemented.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As long as the customer and list of dish fields are not empty, the command <code>draftpoints</code> can be used to add a Points object from the Member class into the draft order. A new Points object will be created to store the points that the user wishes to redeem. Once the order is confirmed, the Points object in the Member class that was added by using the <code>draftcustomer</code> command will be updated. The member list will then show the newly updated points of that member while the order list will reflect the points that the member has earned from the order. The final price of the order will be calculated based on the price of each dish multiplied by the quantity and also take into account the number of points redeemed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-and-loading-the-order-list"><a class="link" href="#saving-and-loading-the-order-list">4.3. Saving and Loading the order list</a></h3>
 <div class="paragraph">
 <p>The order list is saved by using an adaptive class that convert the existing data in the objects to a jaxb-friendly
 class. This means that the order list stores every information of the owner of an order.</p>
@@ -475,7 +489,7 @@ program using the method <code>retrieveMember()</code> in <code>AdaptedOrder.jav
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-program-state-control"><a class="link" href="#proposed-program-state-control">4.3. [Proposed] Program State Control</a></h3>
+<h3 id="proposed-program-state-control"><a class="link" href="#proposed-program-state-control">4.4. [Proposed] Program State Control</a></h3>
 <div class="paragraph">
 <p>As there is multiple functionality in the program, it is proposed that a program state control functionality should be
 implemented to assist the user navigate through the program. The command keywords can be simplified and the help
@@ -487,9 +501,9 @@ and adjusting the returning command in the <code>Parser</code> based on that var
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">4.4. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">4.5. Statistics</a></h3>
 <div class="sect3">
-<h4 id="displaying-tables"><a class="link" href="#displaying-tables">4.4.1. Displaying Tables</a></h4>
+<h4 id="displaying-tables"><a class="link" href="#displaying-tables">4.5.1. Displaying Tables</a></h4>
 <div class="paragraph">
 <p>As RMS is a CLI (Command Line Interface) based program, we are not able to display any graphical tables to the users. However, the alternative to this is to print out the tables in an Ascii format. Therefore, the <code>AsciiTable</code> class is created. This class helps to format any data into a string that is able to display as an AsciiTable.</p>
 </div>
@@ -501,7 +515,7 @@ and adjusting the returning command in the <code>Parser</code> based on that var
 </div>
 </div>
 <div class="sect3">
-<h4 id="calculating-menu-statistics"><a class="link" href="#calculating-menu-statistics">4.4.2. Calculating Menu Statistics</a></h4>
+<h4 id="calculating-menu-statistics"><a class="link" href="#calculating-menu-statistics">4.5.2. Calculating Menu Statistics</a></h4>
 <div class="paragraph">
 <p>The way the statistics for menu items are calculated is by iterating through the list of orders and incrementing a counter for each unique menu items every time it is sold. These counters are then sorted in ascending order and it will print the menu item with the most sales and the one with the least sales for the best sellers and the unpopular items respectively.</p>
 </div>
@@ -1710,4 +1724,4 @@ Guarantees:</p>
 <p><em>{More to be added}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:20:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:24:07 UTC</div></div></div></body></html>
