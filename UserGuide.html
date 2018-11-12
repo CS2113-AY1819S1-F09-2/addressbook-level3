@@ -260,7 +260,8 @@ System adds Cheese Fries to the existing menu.</p>
 <h4 id="delete-menu"><a class="link" href="#delete-menu">4.1.5. Delete Menu</a></h4>
 <div class="paragraph">
 <p>Delete an item on the menu<br>
-Format: <code>deletemenu INDEX</code></p>
+Format: <code>delmenu INDEX</code>+
+Preconditions: The user must perform 'List Menu' , 'List Menu According to Category' or 'Find Menu' use cases first before performing 'Delete Menu'</p>
 </div>
 <div class="ulist">
 <ul>
@@ -268,20 +269,20 @@ Format: <code>deletemenu INDEX</code></p>
 <p>Deletes the menu item in that particular index</p>
 </li>
 <li>
-<p>Note that the user must perform 'List Menu' , 'List Menu According to Category' or 'Find Menu' first before performing 'Delete Menu'</p>
+<p>INDEX should be less than or equal to the total number of food items stated at the end of the list</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>Example:<br>
 <code>listmenutype main</code><br>
-<code>deletemenu 1</code><br>
+<code>delmenu 1</code><br>
 System deletes menu item in index 1 from the displayed menu of main dishes.<br>
 <code>listmenutype main</code><br>
-<code>deletemenu 1</code><br>
+<code>delmenu 1</code><br>
 System deletes the menu item in index 1 from the displayed menu of main dishes.<br>
 <code>findmenu Cheese Fries</code><br>
-<code>deletemenu 3</code><br>
+<code>delmenu 3</code><br>
 System deletes Cheese Fries in index 3 from the displayed menu of items found with <code>Cheese Fries</code> keyword.</p>
 </div>
 </div>
@@ -896,4 +897,4 @@ e.g. <code>deleteorder 3</code></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 09:52:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:31:53 UTC</div></div></div></body></html>
